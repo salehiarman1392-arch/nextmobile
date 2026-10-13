@@ -3,33 +3,31 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NextMobile | خرید و بررسی گوشی موبایل</title>
-  <meta name="description" content="در NextMobile مدل‌های مختلف گوشی موبایل را بررسی کنید، محصولات را جست‌وجو کنید و به سبد خرید خود اضافه کنید.">
+  <title>NextMobile | فروشگاه مدرن گوشی موبایل</title>
+  <meta name="description" content="در NextMobile مدل‌های مختلف گوشی موبایل را جست‌وجو و بررسی کنید و محصولات مورد علاقه خود را به سبد خرید اضافه کنید.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#101828">
-
-  <meta name="google-site-verification" content="iZx_8GsV1FiKA7_FPOdyidT8ubPsTFjoCbEpmZT437w" />
-
+  <meta name="theme-color" content="#09090f">
+  <meta name="google-site-verification" content="iZx_8GsV1FiKA7_FPOdyidT8ubPsTFjoCbEpmZT437w">
   <link rel="canonical" href="https://salehiarman1392-arch.github.io/nextmobile/">
 
-  <meta property="og:title" content="NextMobile | فروشگاه گوشی موبایل">
-  <meta property="og:description" content="گوشی مورد علاقه‌ات را در NextMobile پیدا کن.">
+  <meta property="og:title" content="NextMobile | گوشی‌های روز">
+  <meta property="og:description" content="تجربه‌ای متفاوت در دنیای موبایل">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://salehiarman1392-arch.github.io/nextmobile/">
 
   <style>
     :root {
-      --bg: #f5f7fb;
-      --surface: #ffffff;
-      --text: #101828;
-      --muted: #667085;
-      --primary: #6d5dfc;
-      --primary-dark: #5143dc;
-      --border: #e7eaf1;
-      --green: #12a878;
-      --shadow: 0 12px 35px rgba(16, 24, 40, .07);
+      --bg: #09090f;
+      --panel: #12121d;
+      --panel2: #191927;
+      --purple: #9875ff;
+      --purple2: #7046f5;
+      --white: #f8f7ff;
+      --muted: #a09eb5;
+      --border: rgba(255,255,255,.09);
+      --green: #62e6ae;
     }
 
     * { box-sizing: border-box; }
@@ -38,37 +36,40 @@
 
     body {
       margin: 0;
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(112,70,245,.13), transparent 36%),
+        var(--bg);
+      color: var(--white);
       font-family: Tahoma, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
       line-height: 1.8;
     }
 
     button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
     button { cursor: pointer; }
-
     a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(1160px, 92%);
+      width: min(1180px, 92%);
       margin: auto;
     }
 
-    .topbar {
-      background: #101828;
-      color: white;
+    .announcement {
       text-align: center;
-      font-size: 12px;
-      padding: 7px 12px;
+      padding: 7px 10px;
+      font-size: 11px;
+      color: #ded3ff;
+      background: #20183b;
+      border-bottom: 1px solid rgba(152,117,255,.2);
     }
 
     header {
-      background: rgba(255,255,255,.94);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
+      z-index: 20;
+      background: rgba(9,9,15,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
@@ -76,294 +77,390 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 900;
-      letter-spacing: -.8px;
+      letter-spacing: -1px;
       white-space: nowrap;
     }
 
-    .logo span { color: var(--primary); }
+    .logo span { color: var(--purple); }
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 24px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover { color: var(--purple); }
 
-    .cart-button, .primary-button, .secondary-button {
-      border: 0;
+    .button {
+      border: 1px solid transparent;
       border-radius: 12px;
-      padding: 10px 16px;
+      padding: 10px 15px;
       font-weight: bold;
       transition: .2s;
     }
 
-    .cart-button, .primary-button {
-      background: var(--primary);
+    .button-primary {
+      background: linear-gradient(135deg, #a18aff, #7046f5);
       color: white;
+      box-shadow: 0 6px 25px rgba(112,70,245,.2);
     }
 
-    .cart-button:hover, .primary-button:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 30px rgba(112,70,245,.35);
+    }
+
+    .button-outline {
+      color: var(--white);
+      background: var(--panel);
+      border-color: var(--border);
     }
 
     .hero {
-      margin-top: 28px;
-      padding: 48px;
+      margin-top: 32px;
+      padding: clamp(24px, 5vw, 58px);
+      min-height: 390px;
       border-radius: 28px;
-      color: white;
+      border: 1px solid rgba(152,117,255,.23);
       background:
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,.19), transparent 28%),
-        linear-gradient(125deg, #101828, #332b83 58%, #6d5dfc);
+        radial-gradient(circle at 15% 60%, rgba(112,70,245,.25), transparent 35%),
+        linear-gradient(115deg, #171325, #0e0e18 70%);
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 25px;
       align-items: center;
-      gap: 28px;
       overflow: hidden;
+      position: relative;
     }
 
-    .hero-label {
+    .eyebrow {
       display: inline-block;
-      background: rgba(255,255,255,.13);
-      border: 1px solid rgba(255,255,255,.18);
+      padding: 5px 12px;
+      border: 1px solid rgba(152,117,255,.35);
+      background: rgba(112,70,245,.12);
+      color: #cbbaff;
       border-radius: 30px;
-      padding: 5px 13px;
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .hero h1 {
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(30px, 4.6vw, 49px);
       line-height: 1.5;
       margin: 14px 0;
+      letter-spacing: -1.3px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #c8b8ff, #8965ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero p {
-      color: #e1e4ff;
-      max-width: 560px;
-      font-size: 15px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 470px;
     }
 
-    .hero-art {
-      font-size: clamp(95px, 15vw, 170px);
-      text-align: center;
-      filter: drop-shadow(0 20px 20px rgba(0,0,0,.2));
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
     }
 
-    .hero .primary-button {
-      background: white;
-      color: #342b91;
-      margin-top: 12px;
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+      position: relative;
     }
 
-    .benefits {
+    .glow {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: #7046f5;
+      opacity: .23;
+      filter: blur(75px);
+    }
+
+    .hero-phone {
+      position: relative;
+      z-index: 1;
+      width: 142px;
+      height: 265px;
+      border: 4px solid #77718e;
+      border-radius: 29px;
+      padding: 8px;
+      background: linear-gradient(145deg, #292638, #09090f);
+      box-shadow: 0 20px 70px rgba(112,70,245,.35);
+      transform: rotate(-9deg);
+    }
+
+    .hero-phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 19px;
+      background: #171325;
+    }
+
+    .hero-phone.second {
+      width: 126px;
+      height: 232px;
+      margin-right: -30px;
+      transform: rotate(10deg) translateY(18px);
+      opacity: .8;
+    }
+
+    .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 22px 0 42px;
+      grid-template-columns: repeat(3,1fr);
+      gap: 13px;
+      margin: 18px 0 54px;
     }
 
-    .benefit {
-      background: white;
-      border: 1px solid var(--border);
+    .stat {
+      padding: 18px;
       border-radius: 16px;
-      padding: 17px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #14131f, #101018);
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .benefit-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 13px;
+    .stat-icon {
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      background: #f0eeff;
-      font-size: 22px;
-      flex-shrink: 0;
+      border-radius: 13px;
+      background: rgba(112,70,245,.16);
+      font-size: 20px;
     }
 
-    .benefit strong { display: block; font-size: 14px; }
-    .benefit small { color: var(--muted); font-size: 12px; }
+    .stat strong { display: block; font-size: 13px; }
+    .stat small { display: block; font-size: 11px; color: var(--muted); }
 
     .section-heading {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 20px;
+      gap: 15px;
+      margin-bottom: 22px;
     }
 
     .section-heading h2 {
+      font-size: clamp(22px,3vw,29px);
       margin: 0;
-      font-size: 26px;
     }
 
     .section-heading p {
-      margin: 4px 0 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      margin: 4px 0 0;
+    }
+
+    .section-label {
+      color: var(--purple);
+      font-size: 10px;
+      letter-spacing: 2px;
     }
 
     .toolbar {
       display: grid;
-      grid-template-columns: 1fr 190px 190px;
+      grid-template-columns: 1fr 180px 180px;
       gap: 12px;
-      margin-bottom: 22px;
+      margin-bottom: 23px;
     }
 
     .toolbar input, .toolbar select, .checkout-form input {
       width: 100%;
-      padding: 12px 14px;
-      background: white;
+      min-width: 0;
+      background: #12121d;
+      color: var(--white);
       border: 1px solid var(--border);
+      padding: 12px 14px;
       border-radius: 12px;
       outline: none;
-      color: var(--text);
     }
 
     .toolbar input:focus, .toolbar select:focus,
     .checkout-form input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(109,93,252,.1);
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(152,117,255,.12);
     }
+
+    select option { background: #12121d; color: white; }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 60px;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 17px;
+      margin-bottom: 65px;
     }
 
     .product {
-      background: var(--surface);
+      min-width: 0;
+      overflow: hidden;
+      background: linear-gradient(155deg, #171724, #101018);
       border: 1px solid var(--border);
       border-radius: 19px;
-      padding: 14px;
-      box-shadow: 0 4px 15px rgba(16,24,40,.025);
-      transition: transform .2s, box-shadow .2s;
-      min-width: 0;
+      padding: 12px;
+      transition: .25s;
     }
 
     .product:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
+      transform: translateY(-5px);
+      border-color: rgba(152,117,255,.55);
+      box-shadow: 0 15px 40px rgba(0,0,0,.25);
     }
 
     .product-image {
-      height: 160px;
-      border-radius: 14px;
-      background: linear-gradient(140deg, #f0eeff, #f8f9fc);
+      height: 185px;
+      position: relative;
+      border-radius: 13px;
+      overflow: hidden;
       display: grid;
       place-items: center;
-      font-size: 76px;
-      position: relative;
-      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(112,70,245,.24), transparent 65%),
+        #0c0c14;
     }
 
-    .product-image::after {
-      content: "";
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 9px;
+      transition: transform .3s;
+    }
+
+    .product:hover .product-image img { transform: scale(1.06); }
+
+    .product-badge {
       position: absolute;
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: rgba(109,93,252,.07);
+      top: 9px;
+      right: 9px;
+      z-index: 1;
+      background: rgba(112,70,245,.86);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 7px;
+      font-size: 10px;
     }
-
-    .phone-emoji { position: relative; z-index: 1; }
 
     .product-brand {
-      color: var(--primary);
+      color: #b5a2ff;
       font-size: 11px;
-      font-weight: bold;
-      margin-top: 12px;
+      margin-top: 13px;
     }
 
     .product h3 {
-      font-size: 15px;
-      margin: 3px 0 8px;
-      min-height: 28px;
+      font-size: 14px;
+      margin: 3px 0 7px;
+      line-height: 1.9;
+      min-height: 27px;
     }
 
     .product-spec {
-      font-size: 11px;
       color: var(--muted);
-      min-height: 25px;
+      font-size: 10px;
     }
 
     .product-bottom {
+      border-top: 1px solid var(--border);
+      margin-top: 13px;
+      padding-top: 12px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      margin-top: 12px;
+      align-items: center;
+      gap: 7px;
     }
 
-    .price { font-weight: 900; font-size: 14px; }
-    .price small { display: block; color: var(--muted); font-size: 10px; font-weight: normal; }
-
-    .add-button {
-      border: 0;
-      background: #eeecff;
-      color: #5143dc;
-      border-radius: 10px;
-      padding: 9px 11px;
+    .price {
       font-size: 12px;
       font-weight: bold;
+      line-height: 1.8;
     }
 
-    .add-button:hover { background: var(--primary); color: white; }
+    .price small {
+      display: block;
+      font-size: 9px;
+      font-weight: normal;
+      color: var(--muted);
+    }
+
+    .add-button {
+      border: 1px solid rgba(152,117,255,.35);
+      color: #d3c8ff;
+      background: rgba(112,70,245,.13);
+      border-radius: 9px;
+      padding: 8px 10px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .add-button:hover {
+      background: var(--purple2);
+      color: white;
+    }
 
     .empty-state {
       grid-column: 1 / -1;
       text-align: center;
-      padding: 40px 10px;
-      background: white;
-      border-radius: 18px;
+      padding: 45px 15px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
       color: var(--muted);
     }
 
     .about {
-      background: white;
+      padding: 28px;
+      background: linear-gradient(120deg, #171325, #11111b);
       border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 28px;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
     .about h2 { margin-top: 0; }
-    .about p { color: var(--muted); font-size: 14px; }
+    .about p { color: var(--muted); font-size: 13px; }
 
     footer {
-      background: #101828;
-      color: white;
+      border-top: 1px solid var(--border);
+      background: #07070c;
       padding: 28px 0;
-      margin-top: 30px;
     }
 
     .footer-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 15px;
       flex-wrap: wrap;
     }
 
-    footer p { color: #b9c0d0; font-size: 12px; margin: 5px 0; }
+    footer p { color: var(--muted); font-size: 11px; margin: 4px 0; }
 
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(16,24,40,.55);
-      z-index: 30;
+      background: rgba(0,0,0,.7);
+      z-index: 40;
       display: none;
     }
 
@@ -371,13 +468,14 @@
 
     .cart-panel {
       position: fixed;
-      z-index: 31;
+      z-index: 41;
       top: 0;
       bottom: 0;
       left: 0;
-      width: min(440px, 100%);
-      background: white;
-      padding: 22px;
+      width: min(440px,100%);
+      background: #101018;
+      border-right: 1px solid var(--border);
+      padding: 21px;
       overflow-y: auto;
       transform: translateX(-105%);
       transition: transform .25s;
@@ -387,129 +485,150 @@
 
     .cart-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
     }
 
-    .cart-header h2 { margin: 0; }
+    .cart-header h2 { margin: 0; font-size: 20px; }
 
     .close-button {
-      border: 0;
-      background: #f1f2f6;
-      border-radius: 10px;
-      padding: 8px 12px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      color: white;
+      border-radius: 9px;
+      padding: 7px 11px;
     }
 
     .cart-item {
       display: grid;
-      grid-template-columns: 48px 1fr auto;
-      align-items: center;
+      grid-template-columns: 47px 1fr auto;
       gap: 10px;
+      align-items: center;
       padding: 14px 0;
       border-bottom: 1px solid var(--border);
     }
 
     .cart-item-icon {
-      width: 48px;
-      height: 48px;
-      background: #f1efff;
-      border-radius: 12px;
+      width: 47px;
+      height: 47px;
+      background: #21193d;
+      border-radius: 11px;
       display: grid;
       place-items: center;
-      font-size: 25px;
+      overflow: hidden;
     }
 
-    .cart-item strong { font-size: 13px; display: block; }
-    .cart-item small { color: var(--muted); font-size: 11px; }
+    .cart-item-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+    .cart-item strong { display: block; font-size: 12px; }
+    .cart-item small { color: var(--muted); font-size: 10px; }
 
     .quantity {
       display: flex;
       align-items: center;
       gap: 9px;
-      margin-top: 5px;
+      margin-top: 6px;
     }
 
     .quantity button {
+      width: 25px;
+      height: 25px;
       border: 1px solid var(--border);
-      background: white;
       border-radius: 7px;
-      width: 26px;
-      height: 26px;
+      color: white;
+      background: var(--panel2);
     }
 
     .remove-button {
       border: 0;
       background: transparent;
-      color: #e04444;
-      font-size: 11px;
-      margin-top: 5px;
+      color: #ff7d94;
+      font-size: 10px;
     }
 
     .cart-total {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      padding: 19px 0;
       font-weight: bold;
-      padding: 20px 0;
     }
 
-    .cart-total strong { color: var(--primary); }
+    .cart-total strong { color: #c3b0ff; }
 
-    .full-button { width: 100%; padding: 13px; }
+    .full-button { width: 100%; }
 
     .checkout-form {
       display: none;
       border-top: 1px solid var(--border);
-      padding-top: 15px;
+      padding-top: 14px;
     }
 
     .checkout-form.show { display: block; }
     .checkout-form label { display: block; font-size: 12px; margin: 10px 0 5px; }
+    .checkout-form p { color: var(--muted); font-size: 11px; }
 
     .notice {
       display: none;
       padding: 12px;
-      border-radius: 12px;
-      margin: 12px 0;
-      font-size: 13px;
-      background: #e7f8ef;
-      color: #087c4e;
+      border-radius: 10px;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #8cf2c4;
+      background: #103329;
     }
 
     .notice.show { display: block; }
 
-    @media (max-width: 900px) {
-      .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .nav-links { display: none; }
-      .hero { padding: 30px; }
+    @media(max-width:950px) {
+      .products { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .nav-links { gap: 13px; }
     }
 
-    @media (max-width: 620px) {
-      .hero { grid-template-columns: 1fr; padding: 25px; text-align: center; }
-      .hero-art { font-size: 95px; }
-      .benefits { grid-template-columns: 1fr; gap: 9px; }
+    @media(max-width:650px) {
+      .nav { min-height: 66px; }
+      .nav-links { display: none; }
+      .logo { font-size: 22px; }
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 27px 19px;
+        gap: 4px;
+      }
+      .hero p { margin-inline: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { min-height: 215px; }
+      .hero-phone { width: 112px; height: 208px; }
+      .hero-phone.second { width: 100px; height: 185px; }
+      .stats { grid-template-columns: 1fr; gap: 9px; margin-bottom: 40px; }
+      .stat { padding: 12px; }
       .toolbar { grid-template-columns: 1fr; }
-      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .products { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
       .product { padding: 9px; }
-      .product-image { height: 125px; font-size: 58px; }
-      .product h3 { font-size: 13px; }
-      .product-spec { font-size: 10px; }
-      .price { font-size: 12px; }
-      .add-button { padding: 8px; font-size: 11px; }
+      .product-image { height: 140px; }
+      .product h3 { font-size: 12px; }
+      .price { font-size: 11px; }
+      .add-button { padding: 7px; font-size: 10px; }
       .section-heading h2 { font-size: 21px; }
       .about { padding: 20px; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">✨ به NextMobile خوش آمدید | دنیای گوشی‌ها در یک جا</div>
+  <div class="announcement">✦ طراحی متفاوت، انتخاب هوشمندانه ✦</div>
 
   <header>
     <div class="container nav">
-      <a class="logo" href="#" aria-label="صفحه اصلی NextMobile">Next<span>Mobile</span></a>
+      <a class="logo" href="#" aria-label="NextMobile صفحه اصلی">Next<span>Mobile</span></a>
 
       <nav class="nav-links" aria-label="منوی اصلی">
         <a href="#">خانه</a>
@@ -517,7 +636,7 @@
         <a href="#about">درباره ما</a>
       </nav>
 
-      <button class="cart-button" id="openCart" type="button">
+      <button class="button button-primary" id="openCart" type="button">
         🛒 سبد خرید <span id="cartCount">۰</span>
       </button>
     </div>
@@ -526,40 +645,55 @@
   <main class="container">
     <section class="hero">
       <div>
-        <span class="hero-label">نسل جدید تجربه خرید آنلاین</span>
-        <h1>گوشی بعدی تو،<br>از اینجا شروع می‌شه.</h1>
-        <p>مدل‌های مختلف گوشی را بررسی کن، جست‌وجو کن و انتخابت را به سبد خرید اضافه کن.</p>
-        <a href="#products"><button class="primary-button" type="button">مشاهده محصولات ←</button></a>
+        <span class="eyebrow">✦ نسل جدید تکنولوژی</span>
+        <h1>انتخاب بعدی تو،<br><span class="gradient-text">یک تجربه متفاوت.</span></h1>
+        <p>دنیای گوشی‌های هوشمند را کشف کن. مدل‌ها را بررسی کن، محصولات را جست‌وجو کن و انتخابت را به سبد خرید اضافه کن.</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#products">مشاهده محصولات ←</a>
+          <a class="button button-outline" href="#about">درباره NextMobile</a>
+        </div>
       </div>
-      <div class="hero-art" aria-hidden="true">📱</div>
+
+      <div class="hero-visual" aria-label="تصویر نمایشی گوشی هوشمند">
+        <div class="glow"></div>
+        <div class="hero-phone second">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=350&q=80" alt="گوشی هوشمند" onerror="this.style.display='none'">
+        </div>
+        <div class="hero-phone">
+          <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=350&q=80" alt="نمای گوشی هوشمند" onerror="this.style.display='none'">
+        </div>
+      </div>
     </section>
 
-    <section class="benefits" aria-label="ویژگی‌ها">
-      <div class="benefit">
-        <div class="benefit-icon">🔎</div>
-        <div><strong>انتخاب راحت</strong><small>جست‌وجو و فیلتر محصولات</small></div>
+    <section class="stats" aria-label="ویژگی‌های فروشگاه">
+      <div class="stat">
+        <div class="stat-icon">📱</div>
+        <div><strong>مدل‌های متنوع</strong><small>بررسی گوشی‌های مختلف</small></div>
       </div>
-      <div class="benefit">
-        <div class="benefit-icon">🛒</div>
-        <div><strong>سبد خرید هوشمند</strong><small>ذخیره سبد روی همین دستگاه</small></div>
+      <div class="stat">
+        <div class="stat-icon">⚡</div>
+        <div><strong>جست‌وجوی سریع</strong><small>محصولت را راحت پیدا کن</small></div>
       </div>
-      <div class="benefit">
-        <div class="benefit-icon">💜</div>
-        <div><strong>طراحی مدرن</strong><small>مناسب موبایل و کامپیوتر</small></div>
+      <div class="stat">
+        <div class="stat-icon">💜</div>
+        <div><strong>طراحی مدرن</strong><small>مناسب موبایل و دسکتاپ</small></div>
       </div>
     </section>
 
     <section id="products">
       <div class="section-heading">
         <div>
-          <h2>محصولات محبوب</h2>
+          <div class="section-label">DISCOVER YOUR NEXT PHONE</div>
+          <h2>محصولات منتخب</h2>
           <p>گوشی مورد علاقه‌ات را پیدا کن.</p>
         </div>
         <span id="productCount" style="color:var(--muted);font-size:12px"></span>
       </div>
 
       <div class="toolbar">
-        <input id="searchInput" type="search" placeholder="🔍 جست‌وجوی نام گوشی..." aria-label="جست‌وجوی گوشی">
+        <input id="searchInput" type="search" placeholder="🔎 جست‌وجوی نام گوشی یا برند..." aria-label="جست‌وجوی محصولات">
+
         <select id="brandFilter" aria-label="فیلتر برند">
           <option value="all">همه برندها</option>
           <option value="Apple">Apple</option>
@@ -568,10 +702,11 @@
           <option value="Google">Google</option>
           <option value="Nothing">Nothing</option>
         </select>
-        <select id="sortSelect" aria-label="مرتب‌سازی محصولات">
+
+        <select id="sortSelect" aria-label="مرتب‌سازی">
           <option value="default">مرتب‌سازی پیش‌فرض</option>
-          <option value="low">ارزان‌ترین</option>
-          <option value="high">گران‌ترین</option>
+          <option value="low">قیمت: کم به زیاد</option>
+          <option value="high">قیمت: زیاد به کم</option>
           <option value="name">نام محصول</option>
         </select>
       </div>
@@ -580,15 +715,16 @@
     </section>
 
     <section class="about" id="about">
-      <h2>درباره NextMobile</h2>
+      <div class="section-label">ABOUT NEXTMOBILE</div>
+      <h2>تکنولوژی، با استایلی متفاوت.</h2>
       <p>
-        NextMobile یک فروشگاه نمایشی برای آشنایی با مدل‌های گوشی موبایل است.
-        در این سایت می‌توانی محصولات را جست‌وجو کنی، برندها را فیلتر کنی
-        و از قابلیت سبد خرید استفاده کنی.
+        NextMobile یک فروشگاه نمایشی برای مشاهده و بررسی گوشی‌های هوشمند است.
+        می‌توانی محصولات را جست‌وجو کنی، برندها را فیلتر کنی و از سبد خرید استفاده کنی.
       </p>
       <p>
-        توجه: قیمت‌ها و سفارش‌های این نسخه نمونه هستند. این سایت هنوز به
-        درگاه پرداخت، انبار واقعی یا سیستم ارسال سفارش متصل نیست.
+        توجه: تصاویر آنلاین هستند و ممکن است بسته به دسترسی اینترنت نمایش داده نشوند.
+        قیمت‌ها نمونه‌اند و سفارش‌ها به سرور ارسال نمی‌شوند. برای فروش واقعی، قیمت‌ها،
+        موجودی، تصاویر و اطلاعات محصولات باید بررسی و به‌روزرسانی شوند.
       </p>
     </section>
   </main>
@@ -597,7 +733,7 @@
     <div class="container footer-inner">
       <div>
         <div class="logo">Next<span>Mobile</span></div>
-        <p>یک قدم جلوتر در دنیای موبایل 📱</p>
+        <p>Discover what's next. 💜</p>
       </div>
       <p>© <span id="year"></span> NextMobile — تمامی حقوق محفوظ است.</p>
     </div>
@@ -618,26 +754,24 @@
       <strong id="cartTotal">۰ تومان</strong>
     </div>
 
-    <button class="primary-button full-button" id="checkoutButton" type="button">
+    <button class="button button-primary full-button" id="checkoutButton" type="button">
       ادامه و ثبت سفارش نمایشی
     </button>
 
     <form class="checkout-form" id="checkoutForm">
       <h3>اطلاعات سفارش</h3>
-      <p style="font-size:12px;color:var(--muted)">
-        این فرم فقط نمایشی است و اطلاعات به سرور ارسال نمی‌شوند.
-      </p>
+      <p>این فرم آزمایشی است؛ اطلاعات به سرور ارسال نمی‌شوند.</p>
 
       <label for="customerName">نام و نام خانوادگی</label>
-      <input id="customerName" name="name" required maxlength="80" autocomplete="name" placeholder="نام شما">
+      <input id="customerName" name="name" autocomplete="name" maxlength="80" required placeholder="نام شما">
 
       <label for="customerPhone">شماره تماس</label>
-      <input id="customerPhone" name="phone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="شماره تماس">
+      <input id="customerPhone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" required placeholder="شماره تماس">
 
       <label for="customerAddress">آدرس</label>
-      <input id="customerAddress" name="address" required maxlength="250" autocomplete="street-address" placeholder="آدرس نمونه">
+      <input id="customerAddress" name="address" autocomplete="street-address" maxlength="250" required placeholder="آدرس">
 
-      <button class="primary-button full-button" style="margin-top:15px" type="submit">
+      <button class="button button-primary full-button" style="margin-top:15px" type="submit">
         ثبت سفارش آزمایشی
       </button>
     </form>
@@ -649,48 +783,40 @@
     "use strict";
 
     const products = [
-      {id:1, brand:"Apple", name:"iPhone 16 Pro Max", price:95000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:2, brand:"Apple", name:"iPhone 16 Pro", price:85000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:3, brand:"Apple", name:"iPhone 16", price:65000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
-      {id:4, brand:"Apple", name:"iPhone 15", price:52000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
-      {id:5, brand:"Apple", name:"iPhone 14", price:42000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
-      {id:6, brand:"Apple", name:"iPhone 13", price:35000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:1,brand:"Apple",name:"iPhone 16 Pro Max",price:95000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=500&q=80"},
+      {id:2,brand:"Apple",name:"iPhone 16 Pro",price:85000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80"},
+      {id:3,brand:"Apple",name:"iPhone 16",price:65000000,spec:"۱۲۸ گیگابایت",image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80"},
+      {id:4,brand:"Apple",name:"iPhone 15",price:52000000,spec:"۱۲۸ گیگابایت",image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80"},
+      {id:5,brand:"Apple",name:"iPhone 14",price:42000000,spec:"۱۲۸ گیگابایت",image:"https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=500&q=80"},
+      {id:6,brand:"Apple",name:"iPhone 13",price:35000000,spec:"۱۲۸ گیگابایت",image:"https://images.unsplash.com/photo-1603891128711-11b4b03bb138?auto=format&fit=crop&w=500&q=80"},
 
-      {id:7, brand:"Samsung", name:"Galaxy S25 Ultra", price:90000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:8, brand:"Samsung", name:"Galaxy S25+", price:72000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:9, brand:"Samsung", name:"Galaxy S25", price:60000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:10, brand:"Samsung", name:"Galaxy S24 Ultra", price:75000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:11, brand:"Samsung", name:"Galaxy S24 FE", price:45000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:12, brand:"Samsung", name:"Galaxy A56", price:30000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:13, brand:"Samsung", name:"Galaxy A36", price:22000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
-      {id:14, brand:"Samsung", name:"Galaxy A26", price:17000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:7,brand:"Samsung",name:"Galaxy S25 Ultra",price:90000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=500&q=80"},
+      {id:8,brand:"Samsung",name:"Galaxy S25+",price:72000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80"},
+      {id:9,brand:"Samsung",name:"Galaxy S25",price:60000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80"},
+      {id:10,brand:"Samsung",name:"Galaxy S24 Ultra",price:75000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=500&q=80"},
+      {id:11,brand:"Samsung",name:"Galaxy S24 FE",price:45000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80"},
+      {id:12,brand:"Samsung",name:"Galaxy A56",price:30000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=500&q=80"},
 
-      {id:15, brand:"Xiaomi", name:"Xiaomi 15 Ultra", price:78000000, spec:"۵۱۲ گیگابایت", icon:"📱"},
-      {id:16, brand:"Xiaomi", name:"Xiaomi 15", price:57000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:17, brand:"Xiaomi", name:"Xiaomi 14T Pro", price:48000000, spec:"۵۱۲ گیگابایت", icon:"📱"},
-      {id:18, brand:"Xiaomi", name:"Redmi Note 14 Pro+", price:30000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:19, brand:"Xiaomi", name:"Redmi Note 14 Pro", price:24000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:20, brand:"Xiaomi", name:"Redmi Note 14", price:16000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:21, brand:"Xiaomi", name:"Poco X7 Pro", price:29000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:22, brand:"Xiaomi", name:"Poco F6", price:27000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:13,brand:"Xiaomi",name:"Xiaomi 15 Ultra",price:78000000,spec:"۵۱۲ گیگابایت",image:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80"},
+      {id:14,brand:"Xiaomi",name:"Xiaomi 15",price:57000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=500&q=80"},
+      {id:15,brand:"Xiaomi",name:"Xiaomi 14T Pro",price:48000000,spec:"۵۱۲ گیگابایت",image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80"},
+      {id:16,brand:"Xiaomi",name:"Redmi Note 14 Pro+",price:30000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80"},
+      {id:17,brand:"Xiaomi",name:"Redmi Note 14",price:16000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=500&q=80"},
 
-      {id:23, brand:"Google", name:"Pixel 9 Pro XL", price:82000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:24, brand:"Google", name:"Pixel 9 Pro", price:73000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
-      {id:25, brand:"Google", name:"Pixel 9", price:55000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
-      {id:26, brand:"Google", name:"Pixel 8a", price:35000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:18,brand:"Google",name:"Pixel 9 Pro XL",price:82000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80"},
+      {id:19,brand:"Google",name:"Pixel 9 Pro",price:73000000,spec:"۱۲۸ گیگابایت",image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=500&q=80"},
+      {id:20,brand:"Google",name:"Pixel 9",price:55000000,spec:"۱۲۸ گیگابایت",image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80"},
 
-      {id:27, brand:"Nothing", name:"Nothing Phone (3)", price:58000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
-      {id:28, brand:"Nothing", name:"Nothing Phone (2a)", price:28000000, spec:"۲۵۶ گیگابایت", icon:"📱"}
+      {id:21,brand:"Nothing",name:"Nothing Phone (3)",price:58000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80"},
+      {id:22,brand:"Nothing",name:"Nothing Phone (2a)",price:28000000,spec:"۲۵۶ گیگابایت",image:"https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=500&q=80"}
     ];
 
-    const $ = (id) => document.getElementById(id);
+    const $ = id => document.getElementById(id);
     const numberFormat = new Intl.NumberFormat("fa-IR");
 
     function formatPrice(price) {
       return numberFormat.format(price) + " تومان";
     }
-
-    let cart = loadCart();
 
     function loadCart() {
       try {
@@ -701,19 +827,20 @@
           Number.isInteger(item.id) &&
           Number.isInteger(item.qty) &&
           item.qty > 0 &&
+          item.qty <= 99 &&
           products.some(product => product.id === item.id)
         );
-      } catch (error) {
+      } catch {
         return [];
       }
     }
 
+    let cart = loadCart();
+
     function saveCart() {
       try {
         localStorage.setItem("nextmobile-cart", JSON.stringify(cart));
-      } catch (error) {
-        // اگر ذخیره‌سازی مرورگر در دسترس نباشد، سایت همچنان کار می‌کند.
-      }
+      } catch {}
     }
 
     function renderProducts() {
@@ -722,32 +849,28 @@
       const sort = $("sortSelect").value;
 
       let filtered = products.filter(product => {
-        const matchesText =
-          product.name.toLowerCase().includes(query) ||
-          product.brand.toLowerCase().includes(query) ||
-          product.spec.toLowerCase().includes(query);
-
-        return matchesText && (brand === "all" || product.brand === brand);
+        const text = (product.name + " " + product.brand + " " + product.spec).toLowerCase();
+        return text.includes(query) && (brand === "all" || product.brand === brand);
       });
 
-      if (sort === "low") filtered.sort((a,b) => a.price - b.price);
-      if (sort === "high") filtered.sort((a,b) => b.price - a.price);
+      if (sort === "low") filtered.sort((a,b) => a.price-b.price);
+      if (sort === "high") filtered.sort((a,b) => b.price-a.price);
       if (sort === "name") filtered.sort((a,b) => a.name.localeCompare(b.name));
 
-      $("productCount").textContent =
-        numberFormat.format(filtered.length) + " محصول";
-
-      const grid = $("productsGrid");
+      $("productCount").textContent = numberFormat.format(filtered.length) + " محصول";
 
       if (filtered.length === 0) {
-        grid.innerHTML = '<div class="empty-state">محصولی با این مشخصات پیدا نشد. عبارت دیگری را امتحان کن. 🔎</div>';
+        $("productsGrid").innerHTML =
+          '<div class="empty-state">محصولی پیدا نشد. عبارت دیگری را امتحان کن. 🔎</div>';
         return;
       }
 
-      grid.innerHTML = filtered.map(product => `
+      $("productsGrid").innerHTML = filtered.map(product => `
         <article class="product">
-          <div class="product-image" aria-label="نماد گوشی">
-            <span class="phone-emoji" aria-hidden="true">${product.icon}</span>
+          <div class="product-image">
+            <span class="product-badge">${product.brand}</span>
+            <img src="${product.image}" alt="${product.name}" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#21193d,#101018)'">
           </div>
           <div class="product-brand">${product.brand}</div>
           <h3>${product.name}</h3>
@@ -757,9 +880,7 @@
               ${formatPrice(product.price)}
               <small>قیمت نمونه</small>
             </div>
-            <button class="add-button" type="button" data-add="${product.id}">
-              + افزودن
-            </button>
+            <button class="add-button" type="button" data-add="${product.id}">+ افزودن</button>
           </div>
         </article>
       `).join("");
@@ -767,14 +888,20 @@
 
     function addToCart(id) {
       const item = cart.find(entry => entry.id === id);
+
       if (item) {
-        item.qty += 1;
+        if (item.qty >= 99) {
+          showNotice("حداکثر تعداد هر محصول ۹۹ عدد است.");
+          return;
+        }
+        item.qty++;
       } else {
-        cart.push({id, qty:1});
+        cart.push({id,qty:1});
       }
+
       saveCart();
       renderCart();
-      showNotice("محصول به سبد خرید اضافه شد.");
+      showNotice("محصول به سبد خرید اضافه شد 💜");
     }
 
     function changeQuantity(id, delta) {
@@ -782,6 +909,7 @@
       if (!item) return;
 
       item.qty += delta;
+
       if (item.qty <= 0) {
         cart = cart.filter(entry => entry.id !== id);
       }
@@ -806,9 +934,9 @@
       $("cartCount").textContent = numberFormat.format(count);
       $("cartTotal").textContent = formatPrice(total);
 
-      if (cart.length === 0) {
+      if (!cart.length) {
         $("cartItems").innerHTML =
-          '<div class="empty-state" style="margin-top:20px">سبد خریدت خالیه! 🛒<br>از محصولات بالا چیزی انتخاب کن.</div>';
+          '<div class="empty-state" style="margin-top:18px">سبد خریدت خالیه! 🛒<br>یک محصول انتخاب کن.</div>';
         $("checkoutButton").disabled = true;
         $("checkoutButton").style.opacity = ".5";
         $("checkoutForm").classList.remove("show");
@@ -824,7 +952,9 @@
 
         return `
           <div class="cart-item">
-            <div class="cart-item-icon" aria-hidden="true">${product.icon}</div>
+            <div class="cart-item-icon">
+              <img src="${product.image}" alt="" onerror="this.style.display='none'">
+            </div>
             <div>
               <strong>${product.name}</strong>
               <small>${formatPrice(product.price)}</small>
@@ -843,14 +973,14 @@
     function openCart() {
       $("overlay").classList.add("open");
       $("cartPanel").classList.add("open");
-      $("cartPanel").setAttribute("aria-hidden", "false");
+      $("cartPanel").setAttribute("aria-hidden","false");
       document.body.style.overflow = "hidden";
     }
 
     function closeCart() {
       $("overlay").classList.remove("open");
       $("cartPanel").classList.remove("open");
-      $("cartPanel").setAttribute("aria-hidden", "true");
+      $("cartPanel").setAttribute("aria-hidden","true");
       document.body.style.overflow = "";
     }
 
@@ -858,7 +988,7 @@
       const notice = $("orderNotice");
       notice.textContent = message;
       notice.classList.add("show");
-      window.setTimeout(() => notice.classList.remove("show"), 2800);
+      window.setTimeout(() => notice.classList.remove("show"), 3000);
     }
 
     $("productsGrid").addEventListener("click", event => {
@@ -871,33 +1001,32 @@
       const minus = event.target.closest("[data-minus]");
       const remove = event.target.closest("[data-remove]");
 
-      if (plus) changeQuantity(Number(plus.dataset.plus), 1);
-      if (minus) changeQuantity(Number(minus.dataset.minus), -1);
+      if (plus) changeQuantity(Number(plus.dataset.plus),1);
+      if (minus) changeQuantity(Number(minus.dataset.minus),-1);
       if (remove) removeFromCart(Number(remove.dataset.remove));
     });
 
-    $("searchInput").addEventListener("input", renderProducts);
-    $("brandFilter").addEventListener("change", renderProducts);
-    $("sortSelect").addEventListener("change", renderProducts);
+    $("searchInput").addEventListener("input",renderProducts);
+    $("brandFilter").addEventListener("change",renderProducts);
+    $("sortSelect").addEventListener("change",renderProducts);
 
-    $("openCart").addEventListener("click", openCart);
-    $("closeCart").addEventListener("click", closeCart);
-    $("overlay").addEventListener("click", closeCart);
+    $("openCart").addEventListener("click",openCart);
+    $("closeCart").addEventListener("click",closeCart);
+    $("overlay").addEventListener("click",closeCart);
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keydown",event => {
       if (event.key === "Escape") closeCart();
     });
 
-    $("checkoutButton").addEventListener("click", () => {
-      if (cart.length === 0) return;
+    $("checkoutButton").addEventListener("click",() => {
+      if (!cart.length) return;
       $("checkoutForm").classList.toggle("show");
-      $("checkoutForm").scrollIntoView({behavior:"smooth", block:"nearest"});
+      $("checkoutForm").scrollIntoView({behavior:"smooth",block:"nearest"});
     });
 
-    $("checkoutForm").addEventListener("submit", event => {
+    $("checkoutForm").addEventListener("submit",event => {
       event.preventDefault();
-
-      if (cart.length === 0) return;
+      if (!cart.length) return;
 
       const name = $("customerName").value.trim();
       const phone = $("customerPhone").value.trim();
@@ -908,17 +1037,16 @@
         return;
       }
 
-      // نسخه نمایشی: سفارش در سرور ثبت نمی‌شود.
+      // این نسخه آزمایشی است؛ سفارشی به سرور ارسال نمی‌شود.
       cart = [];
       saveCart();
       renderCart();
       $("checkoutForm").reset();
       $("checkoutForm").classList.remove("show");
-      showNotice("سفارش آزمایشی ثبت شد! این سفارش واقعی نیست.");
+      showNotice("سفارش آزمایشی انجام شد؛ این سفارش واقعی نیست.");
     });
 
     $("year").textContent = new Date().getFullYear();
-
     renderProducts();
     renderCart();
   </script>
