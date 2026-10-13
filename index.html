@@ -1,0 +1,323 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NextMobile | فروشگاه موبایل</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#f5f6fb;--purple:#6c5ce7;--dark:#191c3a;--line:#e8e9f2;--muted:#7a8499}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#192238;font-family:Vazirmatn,Tahoma,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+.container{width:min(1150px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 0;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:900;color:var(--purple)}.logo small{display:block;color:var(--muted);font-size:10px;font-weight:500}
+nav{display:flex;gap:20px;font-size:13px}nav a:hover{color:var(--purple)}
+.primary,.cart-button{background:var(--purple);color:white;border:0;border-radius:11px;padding:11px 15px;font-weight:700}
+.cart-button span{background:white;color:var(--purple);padding:1px 7px;border-radius:6px}
+.hero{margin:24px auto;background:linear-gradient(120deg,#191c3a,#5548c7);color:white;border-radius:24px;padding:38px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px}
+.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.5;margin:12px 0}.hero h1 span{color:#bff5e4}
+.hero p{font-size:14px;color:#dddff4;line-height:2}.hero .primary{display:inline-block;background:#c5f4e5;color:#202344;margin-top:10px}
+.hero-art{display:flex;align-items:center;justify-content:center;gap:12px}
+.hero-art img{width:45%;height:220px;object-fit:contain;filter:drop-shadow(0 15px 18px #0004)}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px auto 40px}
+.benefit{background:white;border:1px solid var(--line);border-radius:13px;padding:16px;font-size:19px}
+.benefit b{display:block;font-size:13px}.benefit small{font-size:11px;color:var(--muted)}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
+.section-title h2{margin:5px 0;font-size:25px}.section-title p{color:var(--muted);font-size:13px;margin:0}
+.purple{color:var(--purple);font-size:11px}
+.filters{display:flex;gap:10px;margin-bottom:20px}
+.filters input,.filters select{background:white;border:1px solid var(--line);border-radius:10px;padding:12px;min-width:0}
+.filters input{flex:1}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.product{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden;transition:.2s}
+.product:hover{transform:translateY(-3px);box-shadow:0 10px 25px #1c244012}
+.product-image{height:185px;background:linear-gradient(140deg,#f8f8fc,#ededf8);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:contain;padding:10px}
+.tag{position:absolute;top:9px;right:9px;z-index:1;background:#d9f8ec;color:#16775d;padding:4px 8px;border-radius:7px;font-size:10px}
+.product-info{padding:12px}.product-info h3{font-size:13px;line-height:1.8;min-height:45px;margin:0 0 5px}
+.price{font-size:13px;font-weight:800;margin:11px 0}.price small{display:block;color:var(--muted);font-size:10px;font-weight:400}
+.add{width:100%;background:#efedff;color:var(--purple);border:0;border-radius:9px;padding:10px;font-weight:800}
+.add:hover{background:var(--purple);color:white}
+.notice{background:#fff4d8;color:#795b13;padding:12px;border-radius:10px;font-size:12px;line-height:1.9;margin-top:24px}
+footer{margin-top:45px;background:white;border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.empty{text-align:center;padding:35px;background:white;color:var(--muted);border-radius:12px;grid-column:1/-1}
+.overlay{display:none;position:fixed;inset:0;background:#15172b88;z-index:20}
+.overlay.open{display:flex}
+.drawer{width:min(450px,100%);height:100%;background:white;padding:20px;overflow:auto}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px}
+.close{border:0;border-radius:8px;padding:8px;background:#f1f1f7}
+.cart-item{display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:13px 0}
+.cart-image{width:65px;height:70px;object-fit:contain;background:#f3f2fc;border-radius:9px}
+.cart-item-info{flex:1}.cart-item-info b{font-size:12px;display:block;line-height:1.8}.cart-item-info small{font-size:11px;color:var(--muted)}
+.quantity{display:flex;align-items:center;gap:7px;margin-top:6px;flex-wrap:wrap}
+.quantity button,.remove{background:white;border:1px solid var(--line);border-radius:6px;padding:3px 8px}.remove{color:#d14d58}
+.total{display:flex;justify-content:space-between;padding:18px 0;font-weight:800}.full{width:100%}
+.checkout-form{display:none;border-top:1px solid var(--line);padding-top:14px;margin-top:16px}.checkout-form.show{display:block}
+.checkout-form label{display:block;font-size:12px;margin:12px 0}
+.checkout-form input,.checkout-form textarea{display:block;width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;margin-top:6px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:26px}}
+@media(max-width:580px){.nav nav{order:3;width:100%;justify-content:space-between;font-size:11px}.hero{grid-template-columns:1fr;padding:23px}.hero-art img{height:170px}.benefits{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.product-image{height:145px}.product-info{padding:9px}.product-info h3{font-size:12px}.filters{flex-wrap:wrap}.filters input{flex-basis:100%}.filters select{flex:1}.section-title h2{font-size:21px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="logo" href="#">NextMobile<small>فروشگاه تخصصی موبایل</small></a>
+  <nav><a href="#products">فروشگاه</a><a href="#benefits">خدمات ما</a><a href="#about">درباره ما</a></nav>
+  <button class="cart-button" onclick="openCart()">🛒 سبد خرید <span id="cartCount">۰</span></button>
+ </div>
+</header>
+
+<main class="container">
+ <section class="hero">
+  <div>
+   <span style="color:#bff5e4">نسل جدید خرید موبایل</span>
+   <h1>گوشی بعدی‌ات<br><span>اینجا منتظرته.</span></h1>
+   <p>از گوشی‌های اقتصادی تا پرچم‌دارهای قدرتمند؛ مدل مورد علاقه‌ات رو پیدا کن.</p>
+   <a class="primary" href="#products">مشاهده محصولات ←</a>
+  </div>
+  <div class="hero-art">
+   <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=500&q=85" alt="گوشی هوشمند">
+   <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=85" alt="موبایل">
+  </div>
+ </section>
+
+ <section class="benefits" id="benefits">
+  <div class="benefit">🚚 <b>ارسال مطمئن</b><small> پیگیری سفارش آسان</small></div>
+  <div class="benefit">🛡️ <b>خرید آگاهانه</b><small> اطلاعات شفاف محصول</small></div>
+  <div class="benefit">🎧 <b>پشتیبانی مشتریان</b><small> همراه شما در خرید</small></div>
+ </section>
+
+ <section id="products">
+  <div class="section-title">
+   <div><span class="purple">ویترین نکست موبایل</span><h2>محصولات فروشگاه</h2><p>از بین ۷۰ مدل گوشی انتخاب کن.</p></div>
+   <span id="productCount"></span>
+  </div>
+  <div class="filters">
+   <input id="search" type="search" placeholder="🔎 جست‌وجوی نام گوشی..." oninput="renderProducts()">
+   <select id="brandFilter" onchange="renderProducts()">
+    <option value="">همه برندها</option>
+    <option>Apple</option><option>Samsung</option><option>Xiaomi</option>
+    <option>Google</option><option>OnePlus</option><option>Motorola</option>
+    <option>Nothing</option><option>Honor</option><option>Huawei</option><option>OPPO</option><option>vivo</option>
+   </select>
+   <select id="sortFilter" onchange="renderProducts()">
+    <option value="featured">پیشنهادی</option><option value="low">ارزان‌ترین</option>
+    <option value="high">گران‌ترین</option><option value="name">نام محصول</option>
+   </select>
+  </div>
+  <div class="grid" id="productGrid"></div>
+ </section>
+ <p class="notice">قیمت‌ها نمونه‌اند و قیمت لحظه‌ای بازار نیستند. تصاویر از منابع عمومی اینترنتی دریافت می‌شوند و ممکن است عکس دقیق همان مدل نباشند. ثبت سفارش این نسخه نمایشی است و پرداخت آنلاین ندارد.</p>
+</main>
+
+<footer id="about"><div class="container footer-inner"><b>NextMobile © ۲۰۲۶</b><span>انتخاب هوشمند، خرید آسان</span><span>فروشگاه نمایشی موبایل</span></div></footer>
+
+<div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
+ <aside class="drawer">
+  <div class="drawer-head"><h2>🛒 سبد خرید</h2><button class="close" onclick="closeCart()">بستن ✕</button></div>
+  <div id="cartItems"></div>
+  <div class="total"><span>مبلغ کل</span><span id="cartTotal">۰ تومان</span></div>
+  <button class="primary full" onclick="showCheckout()">ادامه و ثبت سفارش</button>
+  <form id="checkoutForm" class="checkout-form" onsubmit="submitOrder(event)">
+   <h3>اطلاعات گیرنده</h3>
+   <label>نام و نام خانوادگی<input id="customerName" required placeholder="نام گیرنده"></label>
+   <label>شماره تماس<input id="customerPhone" required type="tel" placeholder="شماره تماس"></label>
+   <label>نشانی کامل<textarea id="customerAddress" required rows="3" placeholder="آدرس تحویل"></textarea></label>
+   <p class="notice">این سفارش فقط در مرورگر فعلی ذخیره می‌شود؛ پرداخت آنلاین فعال نیست.</p>
+   <button class="primary full" type="submit">ثبت سفارش نمایشی</button>
+  </form>
+ </aside>
+</div>
+
+<script>
+// نام، برند، قیمت نمونه به تومان، شناسه عکس
+const rawProducts = [
+["iPhone 16 Pro Max 256GB","Apple",450000000,"1592899677977-9c10ca588bbd"],
+["iPhone 16 Pro 256GB","Apple",390000000,"1598327105666-5b89351aff97"],
+["iPhone 16 128GB","Apple",220000000,"1511707171634-5f897ff02aa9"],
+["iPhone 15 Pro Max 256GB","Apple",350000000,"1592899677977-9c10ca588bbd"],
+["iPhone 15 128GB","Apple",180000000,"1511707171634-5f897ff02aa9"],
+["iPhone 14 128GB","Apple",135000000,"1598327105666-5b89351aff97"],
+["Galaxy S25 Ultra 256GB","Samsung",265000000,"1610945265064-0e34e5519bbf"],
+["Galaxy S25+ 256GB","Samsung",205000000,"1511707171634-5f897ff02aa9"],
+["Galaxy S25 128GB","Samsung",170000000,"1610945265064-0e34e5519bbf"],
+["Galaxy S24 Ultra 256GB","Samsung",230000000,"1610945265064-0e34e5519bbf"],
+["Galaxy A56 256GB","Samsung",60000000,"1511707171634-5f897ff02aa9"],
+["Galaxy A36 128GB","Samsung",42000000,"1598327105666-5b89351aff97"],
+["Xiaomi 15 Ultra 512GB","Xiaomi",180000000,"1511707171634-5f897ff02aa9"],
+["Xiaomi 15 256GB","Xiaomi",120000000,"1598327105666-5b89351aff97"],
+["Redmi Note 14 Pro+ 256GB","Xiaomi",75000000,"1511707171634-5f897ff02aa9"],
+["Redmi Note 14 Pro 256GB","Xiaomi",55000000,"1598327105666-5b89351aff97"],
+["Redmi Note 13 256GB","Xiaomi",35000000,"1511707171634-5f897ff02aa9"],
+["POCO X7 Pro 256GB","Xiaomi",55000000,"1598327105666-5b89351aff97"],
+["Pixel 9 Pro XL 256GB","Google",180000000,"1598327105666-5b89351aff97"],
+["Pixel 9 Pro 128GB","Google",150000000,"1511707171634-5f897ff02aa9"],
+["Pixel 9 128GB","Google",110000000,"1598327105666-5b89351aff97"],
+["Pixel 8a 128GB","Google",75000000,"1511707171634-5f897ff02aa9"],
+["OnePlus 13 512GB","OnePlus",135000000,"1598327105666-5b89351aff97"],
+["OnePlus 13R 256GB","OnePlus",85000000,"1511707171634-5f897ff02aa9"],
+["OnePlus 12 256GB","OnePlus",100000000,"1598327105666-5b89351aff97"],
+["Galaxy Z Flip6 256GB","Samsung",135000000,"1610945265064-0e34e5519bbf"],
+["Galaxy Z Fold6 256GB","Samsung",270000000,"1610945265064-0e34e5519bbf"],
+["iPhone 13 128GB","Apple",95000000,"1511707171634-5f897ff02aa9"],
+["POCO F6 Pro 512GB","Xiaomi",75000000,"1598327105666-5b89351aff97"],
+["OnePlus Nord 4 256GB","OnePlus",60000000,"1511707171634-5f897ff02aa9"],
+
+// ۴۰ گوشی جدید
+["iPhone 17 Pro Max 256GB","Apple",550000000,"1592899677977-9c10ca588bbd"],
+["iPhone 17 Pro 256GB","Apple",490000000,"1598327105666-5b89351aff97"],
+["iPhone 17 256GB","Apple",320000000,"1511707171634-5f897ff02aa9"],
+["iPhone 17 Air 256GB","Apple",390000000,"1598327105666-5b89351aff97"],
+["iPhone 17e 256GB","Apple",260000000,"1511707171634-5f897ff02aa9"],
+["iPhone 16e 128GB","Apple",175000000,"1598327105666-5b89351aff97"],
+["iPhone 15 Pro 256GB","Apple",290000000,"1592899677977-9c10ca588bbd"],
+["iPhone 14 Pro Max 256GB","Apple",190000000,"1511707171634-5f897ff02aa9"],
+["iPhone 13 Pro Max 256GB","Apple",145000000,"1598327105666-5b89351aff97"],
+["iPhone 12 128GB","Apple",70000000,"1511707171634-5f897ff02aa9"],
+["Galaxy S26 Ultra 256GB","Samsung",320000000,"1610945265064-0e34e5519bbf"],
+["Galaxy S26+ 256GB","Samsung",260000000,"1610945265064-0e34e5519bbf"],
+["Galaxy S26 256GB","Samsung",220000000,"1511707171634-5f897ff02aa9"],
+["Galaxy S25 FE 256GB","Samsung",145000000,"1610945265064-0e34e5519bbf"],
+["Galaxy S24 FE 256GB","Samsung",125000000,"1511707171634-5f897ff02aa9"],
+["Galaxy A57 256GB","Samsung",85000000,"1598327105666-5b89351aff97"],
+["Galaxy A37 128GB","Samsung",55000000,"1511707171634-5f897ff02aa9"],
+["Galaxy A26 128GB","Samsung",35000000,"1598327105666-5b89351aff97"],
+["Galaxy Z Flip8 256GB","Samsung",200000000,"1610945265064-0e34e5519bbf"],
+["Galaxy Z Fold8 256GB","Samsung",350000000,"1610945265064-0e34e5519bbf"],
+["Xiaomi 17 Ultra 512GB","Xiaomi",240000000,"1598327105666-5b89351aff97"],
+["Xiaomi 17 Pro 512GB","Xiaomi",190000000,"1511707171634-5f897ff02aa9"],
+["Xiaomi 17 256GB","Xiaomi",155000000,"1598327105666-5b89351aff97"],
+["Xiaomi 15T Pro 512GB","Xiaomi",140000000,"1511707171634-5f897ff02aa9"],
+["Xiaomi 15T 256GB","Xiaomi",105000000,"1598327105666-5b89351aff97"],
+["Redmi Note 15 Pro+ 256GB","Xiaomi",90000000,"1511707171634-5f897ff02aa9"],
+["Redmi Note 15 Pro 256GB","Xiaomi",70000000,"1598327105666-5b89351aff97"],
+["Redmi Note 15 256GB","Xiaomi",48000000,"1511707171634-5f897ff02aa9"],
+["POCO F7 Ultra 512GB","Xiaomi",130000000,"1598327105666-5b89351aff97"],
+["POCO F7 Pro 256GB","Xiaomi",100000000,"1511707171634-5f897ff02aa9"],
+["POCO X7 256GB","Xiaomi",42000000,"1598327105666-5b89351aff97"],
+["POCO M7 Pro 256GB","Xiaomi",35000000,"1511707171634-5f897ff02aa9"],
+["Pixel 10 Pro XL 256GB","Google",230000000,"1598327105666-5b89351aff97"],
+["Pixel 10 Pro 256GB","Google",200000000,"1511707171634-5f897ff02aa9"],
+["Pixel 10 128GB","Google",145000000,"1598327105666-5b89351aff97"],
+["Pixel 10a 128GB","Google",95000000,"1511707171634-5f897ff02aa9"],
+["OnePlus 15 512GB","OnePlus",170000000,"1598327105666-5b89351aff97"],
+["OnePlus 13T 256GB","OnePlus",110000000,"1511707171634-5f897ff02aa9"],
+["Motorola Edge 60 Pro 256GB","Motorola",90000000,"1598327105666-5b89351aff97"],
+["Nothing Phone 4a Pro 256GB","Nothing",85000000,"1511707171634-5f897ff02aa9"]
+];
+
+const products=rawProducts.map((p,i)=>({
+ id:i+1,name:p[0],brand:p[1],price:p[2],
+ image:`https://images.unsplash.com/photo-${p[3]}?auto=format&fit=crop&w=500&q=85`
+}));
+
+let cart={};
+try{cart=JSON.parse(localStorage.getItem("nm-cart")||"{}")}catch{cart={}}
+const money=n=>new Intl.NumberFormat("fa-IR").format(n)+" تومان";
+const digits=n=>new Intl.NumberFormat("fa-IR").format(n);
+
+function saveCart(){
+ localStorage.setItem("nm-cart",JSON.stringify(cart));
+ updateCartCount();
+}
+function updateCartCount(){
+ document.getElementById("cartCount").textContent=
+ digits(Object.values(cart).reduce((sum,q)=>sum+q,0));
+}
+function renderProducts(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const brand=document.getElementById("brandFilter").value;
+ const sort=document.getElementById("sortFilter").value;
+ let list=products.filter(p=>
+  p.name.toLowerCase().includes(q)&&(!brand||p.brand===brand)
+ );
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);
+ if(sort==="high")list.sort((a,b)=>b.price-a.price);
+ if(sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));
+ document.getElementById("productCount").textContent=digits(list.length)+" محصول";
+ document.getElementById("productGrid").innerHTML=list.length?list.map(p=>`
+  <article class="product">
+   <div class="product-image">
+    <span class="tag">${p.brand}</span>
+    <img src="${p.image}" alt="${p.name}" loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/500x500/f1f0fc/5141c7?text=Mobile'">
+   </div>
+   <div class="product-info">
+    <h3>${p.name}</h3>
+    <span class="purple">${p.brand}</span>
+    <div class="price">${money(p.price)}<small>قیمت نمونه</small></div>
+    <button class="add" onclick="addToCart(${p.id})">+ افزودن به سبد خرید</button>
+   </div>
+  </article>`).join(""):'<div class="empty">محصولی پیدا نشد.</div>';
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;saveCart();renderCart()}
+function changeQty(id,delta){
+ cart[id]=(cart[id]||0)+delta;
+ if(cart[id]<=0)delete cart[id];
+ saveCart();renderCart();
+}
+function removeItem(id){delete cart[id];saveCart();renderCart()}
+function openCart(){document.getElementById("cartOverlay").classList.add("open");renderCart()}
+function closeCart(){document.getElementById("cartOverlay").classList.remove("open")}
+function renderCart(){
+ const entries=Object.entries(cart).filter(([id,q])=>products.some(p=>p.id===Number(id))&&q>0);
+ const root=document.getElementById("cartItems");
+ if(!entries.length){
+  root.innerHTML='<div class="empty">سبد خرید خالی است 🛍️</div>';
+ }else{
+  root.innerHTML=entries.map(([id,q])=>{
+   const p=products.find(x=>x.id===Number(id));
+   return `<div class="cart-item">
+    <img class="cart-image" src="${p.image}" alt="${p.name}">
+    <div class="cart-item-info"><b>${p.name}</b><small>${money(p.price)}</small>
+     <div class="quantity">
+      <button onclick="changeQty(${p.id},-1)">−</button><span>${digits(q)}</span>
+      <button onclick="changeQty(${p.id},1)">+</button>
+      <button class="remove" onclick="removeItem(${p.id})">حذف</button>
+     </div>
+    </div>
+   </div>`;
+  }).join("");
+ }
+ const total=entries.reduce((sum,[id,q])=>sum+products.find(p=>p.id===Number(id)).price*q,0);
+ document.getElementById("cartTotal").textContent=money(total);
+ document.getElementById("checkoutForm").classList.remove("show");
+}
+function showCheckout(){
+ if(!Object.keys(cart).length){alert("سبد خرید خالی است.");return}
+ document.getElementById("checkoutForm").classList.add("show");
+}
+function submitOrder(e){
+ e.preventDefault();
+ if(!Object.keys(cart).length){alert("سبد خرید خالی است.");return}
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const address=document.getElementById("customerAddress").value.trim();
+ if(!name||!phone||!address){alert("لطفاً تمام اطلاعات را وارد کن.");return}
+ const order={
+  number:"NM-"+Date.now().toString().slice(-8),
+  name,phone,address,items:cart,
+  createdAt:new Date().toISOString()
+ };
+ let orders=[];
+ try{orders=JSON.parse(localStorage.getItem("nm-orders")||"[]")}catch{}
+ orders.push(order);
+ localStorage.setItem("nm-orders",JSON.stringify(orders));
+ cart={};saveCart();renderCart();
+ document.getElementById("checkoutForm").reset();
+ alert("سفارش نمایشی ثبت شد. شماره سفارش: "+order.number+
+ "\nاطلاعات فقط در همین مرورگر ذخیره شده است.");
+ closeCart();
+}
+renderProducts();
+updateCartCount();
+</script>
+</body>
+</html>
+```
