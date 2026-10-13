@@ -5,800 +5,923 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Search Console verification -->
-  <meta name="google-site-verification" content="iZx_8GsV1FiKA7_FPOdyidT8ubPsTFjoCbEpmZT437w">
-
   <title>NextMobile | خرید و بررسی گوشی موبایل</title>
-  <meta name="description" content="در فروشگاه NextMobile مدل‌های متنوع گوشی اپل، سامسونگ، شیائومی، گوگل، وان‌پلاس و ناتینگ را مشاهده و مقایسه کنید.">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#635bff">
+  <meta name="description" content="در NextMobile مدل‌های مختلف گوشی موبایل را بررسی کنید، محصولات را جست‌وجو کنید و به سبد خرید خود اضافه کنید.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#101828">
+
+  <meta name="google-site-verification" content="iZx_8GsV1FiKA7_FPOdyidT8ubPsTFjoCbEpmZT437w" />
+
   <link rel="canonical" href="https://salehiarman1392-arch.github.io/nextmobile/">
 
-  <meta property="og:title" content="NextMobile | فروشگاه موبایل">
-  <meta property="og:description" content="مدل‌های متنوع گوشی را در NextMobile جست‌وجو و مقایسه کنید.">
+  <meta property="og:title" content="NextMobile | فروشگاه گوشی موبایل">
+  <meta property="og:description" content="گوشی مورد علاقه‌ات را در NextMobile پیدا کن.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://salehiarman1392-arch.github.io/nextmobile/">
 
   <style>
     :root {
       --bg: #f5f7fb;
-      --card: #fff;
-      --text: #172033;
-      --muted: #778197;
-      --primary: #635bff;
-      --primary-dark: #4c44e8;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --primary: #6d5dfc;
+      --primary-dark: #5143dc;
       --border: #e7eaf1;
-      --green: #159b68;
-      --shadow: 0 8px 30px rgba(22,34,65,.07);
+      --green: #12a878;
+      --shadow: 0 12px 35px rgba(16, 24, 40, .07);
     }
+
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Tahoma, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.8;
     }
-    button, input, select, textarea { font: inherit; }
+
+    button, input, select { font: inherit; }
     button { cursor: pointer; }
-    a { text-decoration: none; color: inherit; }
-    .container { width: min(1200px,92%); margin: auto; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: #101828;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      padding: 7px 12px;
+    }
+
     header {
-      background: rgba(255,255,255,.96);
+      background: rgba(255,255,255,.94);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
       backdrop-filter: blur(12px);
     }
+
     .nav {
-      min-height: 74px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 20px;
     }
-    .logo { font-size: 24px; font-weight: 900; }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -.8px;
+      white-space: nowrap;
+    }
+
     .logo span { color: var(--primary); }
-    .nav-links { display: flex; gap: 22px; color: #596278; font-size: 14px; }
-    .nav-actions { display: flex; gap: 10px; align-items: center; }
-    .btn {
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .cart-button, .primary-button, .secondary-button {
       border: 0;
       border-radius: 12px;
-      padding: 11px 16px;
+      padding: 10px 16px;
       font-weight: bold;
       transition: .2s;
     }
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
-    .btn-light { background: #f0f1ff; color: var(--primary); }
-    .btn-outline { background: white; border: 1px solid var(--border); }
-    .cart-count {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      color: var(--primary);
-      border-radius: 50%;
-      min-width: 22px;
-      height: 22px;
-      margin-right: 5px;
-      font-size: 12px;
-    }
-    .hero { padding: 38px 0 25px; }
-    .hero-box {
-      background: linear-gradient(120deg,#151b3a,#3c368e 65%,#7068ff);
+
+    .cart-button, .primary-button {
+      background: var(--primary);
       color: white;
+    }
+
+    .cart-button:hover, .primary-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      margin-top: 28px;
+      padding: 48px;
       border-radius: 28px;
-      padding: 42px;
+      color: white;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,.19), transparent 28%),
+        linear-gradient(125deg, #101828, #332b83 58%, #6d5dfc);
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 25px;
+      grid-template-columns: 1.5fr 1fr;
       align-items: center;
+      gap: 28px;
       overflow: hidden;
     }
-    .eyebrow { color: #c8c5ff; font-size: 13px; font-weight: bold; }
-    .hero h1 { font-size: clamp(28px,4vw,46px); line-height: 1.55; margin: 12px 0; }
-    .hero p { color: #e1e2ff; line-height: 2; max-width: 600px; }
-    .hero-visual {
-      min-height: 210px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 110px;
-      filter: drop-shadow(0 20px 20px #12152d80);
-    }
-    .hero-tags { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 20px; }
-    .hero-tags span {
-      background: #ffffff1c;
-      border: 1px solid #ffffff30;
-      padding: 8px 12px;
+
+    .hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.18);
       border-radius: 30px;
+      padding: 5px 13px;
       font-size: 12px;
     }
-    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 20px; }
-    .stat { background: white; padding: 17px; border-radius: 16px; border: 1px solid var(--border); }
-    .stat strong { display: block; font-size: 20px; margin-bottom: 5px; }
-    .stat span { font-size: 12px; color: var(--muted); }
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin: 35px 0 18px;
+
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.5;
+      margin: 14px 0;
     }
-    .section-head h2 { margin: 0 0 8px; font-size: 25px; }
-    .section-head p { margin: 0; color: var(--muted); font-size: 13px; }
-    .count { color: var(--primary); font-weight: bold; }
-    .toolbar {
+
+    .hero p {
+      color: #e1e4ff;
+      max-width: 560px;
+      font-size: 15px;
+    }
+
+    .hero-art {
+      font-size: clamp(95px, 15vw, 170px);
+      text-align: center;
+      filter: drop-shadow(0 20px 20px rgba(0,0,0,.2));
+    }
+
+    .hero .primary-button {
       background: white;
-      padding: 15px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 18px;
+      color: #342b91;
+      margin-top: 12px;
     }
-    .field {
-      width: 100%;
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 22px 0 42px;
+    }
+
+    .benefit {
+      background: white;
       border: 1px solid var(--border);
-      background: #fbfcff;
+      border-radius: 16px;
+      padding: 17px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #f0eeff;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .benefit strong { display: block; font-size: 14px; }
+    .benefit small { color: var(--muted); font-size: 12px; }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .section-heading p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr 190px 190px;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .toolbar input, .toolbar select, .checkout-form input {
+      width: 100%;
+      padding: 12px 14px;
+      background: white;
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 13px 14px;
       outline: none;
       color: var(--text);
     }
-    .field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px #635bff18; }
-    .brands { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0 23px; }
-    .brand-chip {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 9px 15px;
-      border-radius: 30px;
-      color: #596278;
-      font-size: 13px;
+
+    .toolbar input:focus, .toolbar select:focus,
+    .checkout-form input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(109,93,252,.1);
     }
-    .brand-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
-    .products { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 17px; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 60px;
+    }
+
     .product {
-      background: white;
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 13px;
-      transition: .22s;
+      border-radius: 19px;
+      padding: 14px;
+      box-shadow: 0 4px 15px rgba(16,24,40,.025);
+      transition: transform .2s, box-shadow .2s;
       min-width: 0;
     }
-    .product:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
     .product-image {
-      background: linear-gradient(145deg,#f2f4fb,#e8eafa);
-      height: 205px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 160px;
+      border-radius: 14px;
+      background: linear-gradient(140deg, #f0eeff, #f8f9fc);
+      display: grid;
+      place-items: center;
+      font-size: 76px;
+      position: relative;
       overflow: hidden;
     }
-    .product-image img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
-    .product-brand { color: var(--primary); font-size: 11px; font-weight: bold; margin-top: 14px; }
-    .product h3 { font-size: 14px; line-height: 1.8; margin: 7px 0; min-height: 48px; }
-    .product-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; gap: 8px; }
-    .product-price { font-weight: 900; font-size: 15px; margin: 15px 0 12px; }
-    .product-price small { font-size: 10px; font-weight: normal; color: var(--muted); }
-    .product-actions { display: flex; gap: 7px; }
-    .product-actions button { flex: 1; font-size: 11px; padding: 11px 5px; }
-    .empty {
-      grid-column: 1/-1;
+
+    .product-image::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: rgba(109,93,252,.07);
+    }
+
+    .phone-emoji { position: relative; z-index: 1; }
+
+    .product-brand {
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .product h3 {
+      font-size: 15px;
+      margin: 3px 0 8px;
+      min-height: 28px;
+    }
+
+    .product-spec {
+      font-size: 11px;
+      color: var(--muted);
+      min-height: 25px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .price { font-weight: 900; font-size: 14px; }
+    .price small { display: block; color: var(--muted); font-size: 10px; font-weight: normal; }
+
+    .add-button {
+      border: 0;
+      background: #eeecff;
+      color: #5143dc;
+      border-radius: 10px;
+      padding: 9px 11px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .add-button:hover { background: var(--primary); color: white; }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 10px;
       background: white;
       border-radius: 18px;
-      padding: 45px 20px;
-      text-align: center;
       color: var(--muted);
     }
-    footer { margin-top: 55px; background: #171d36; color: white; padding: 35px 0; }
-    .footer-row { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
-    footer p { color: #b8bfd5; line-height: 2; font-size: 13px; }
-    footer small { color: #aab1c8; }
+
+    .about {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      margin-bottom: 40px;
+    }
+
+    .about h2 { margin-top: 0; }
+    .about p { color: var(--muted); font-size: 14px; }
+
+    footer {
+      background: #101828;
+      color: white;
+      padding: 28px 0;
+      margin-top: 30px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer p { color: #b9c0d0; font-size: 12px; margin: 5px 0; }
+
     .overlay {
       position: fixed;
       inset: 0;
-      background: #10172b75;
-      z-index: 50;
+      background: rgba(16,24,40,.55);
+      z-index: 30;
       display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
     }
-    .overlay.show { display: flex; }
-    .modal {
-      width: min(520px,100%);
-      max-height: 90vh;
-      overflow: auto;
+
+    .overlay.open { display: block; }
+
+    .cart-panel {
+      position: fixed;
+      z-index: 31;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: min(440px, 100%);
       background: white;
-      border-radius: 22px;
-      padding: 24px;
+      padding: 22px;
+      overflow-y: auto;
+      transform: translateX(-105%);
+      transition: transform .25s;
     }
-    .modal-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-    .modal-head h2 { margin: 0; font-size: 21px; }
-    .close { border: 0; background: #f0f1f6; width: 36px; height: 36px; border-radius: 10px; font-size: 20px; }
+
+    .cart-panel.open { transform: translateX(0); }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .cart-header h2 { margin: 0; }
+
+    .close-button {
+      border: 0;
+      background: #f1f2f6;
+      border-radius: 10px;
+      padding: 8px 12px;
+    }
+
     .cart-item {
       display: grid;
-      grid-template-columns: 65px 1fr auto;
-      gap: 12px;
+      grid-template-columns: 48px 1fr auto;
       align-items: center;
-      padding: 13px 0;
+      gap: 10px;
+      padding: 14px 0;
       border-bottom: 1px solid var(--border);
     }
-    .cart-item img { width: 65px; height: 65px; object-fit: contain; background: #f4f5fb; border-radius: 12px; }
-    .cart-item h4 { margin: 0 0 8px; font-size: 13px; }
-    .cart-item p { margin: 0; color: var(--muted); font-size: 12px; }
-    .quantity { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
-    .quantity button { border: 1px solid var(--border); background: white; border-radius: 7px; width: 26px; height: 26px; }
-    .total-row { display: flex; justify-content: space-between; padding: 18px 0; font-weight: bold; }
-    .checkout-form { display: grid; gap: 12px; margin-top: 15px; }
-    .note { background: #fff7df; color: #805b0c; border-radius: 12px; padding: 12px; font-size: 12px; line-height: 1.9; margin-top: 14px; }
-    .toast {
-      position: fixed;
-      bottom: 22px;
-      left: 22px;
-      z-index: 80;
-      background: #172033;
-      color: white;
-      padding: 13px 18px;
+
+    .cart-item-icon {
+      width: 48px;
+      height: 48px;
+      background: #f1efff;
       border-radius: 12px;
-      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+    }
+
+    .cart-item strong { font-size: 13px; display: block; }
+    .cart-item small { color: var(--muted); font-size: 11px; }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 5px;
+    }
+
+    .quantity button {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 7px;
+      width: 26px;
+      height: 26px;
+    }
+
+    .remove-button {
+      border: 0;
+      background: transparent;
+      color: #e04444;
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      padding: 20px 0;
+    }
+
+    .cart-total strong { color: var(--primary); }
+
+    .full-button { width: 100%; padding: 13px; }
+
+    .checkout-form {
       display: none;
+      border-top: 1px solid var(--border);
+      padding-top: 15px;
+    }
+
+    .checkout-form.show { display: block; }
+    .checkout-form label { display: block; font-size: 12px; margin: 10px 0 5px; }
+
+    .notice {
+      display: none;
+      padding: 12px;
+      border-radius: 12px;
+      margin: 12px 0;
       font-size: 13px;
+      background: #e7f8ef;
+      color: #087c4e;
     }
-    .toast.show { display: block; animation: appear .2s ease-out; }
-    @keyframes appear {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media(max-width:950px) {
-      .products { grid-template-columns: repeat(3,minmax(0,1fr)); }
+
+    .notice.show { display: block; }
+
+    @media (max-width: 900px) {
+      .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .nav-links { display: none; }
+      .hero { padding: 30px; }
     }
-    @media(max-width:680px) {
-      .hero-box { grid-template-columns: 1fr; padding: 27px; }
-      .hero-visual { min-height: 100px; font-size: 75px; }
-      .stats { gap: 8px; }
-      .stat { padding: 12px; }
-      .stat strong { font-size: 16px; }
+
+    @media (max-width: 620px) {
+      .hero { grid-template-columns: 1fr; padding: 25px; text-align: center; }
+      .hero-art { font-size: 95px; }
+      .benefits { grid-template-columns: 1fr; gap: 9px; }
       .toolbar { grid-template-columns: 1fr; }
-      .products { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       .product { padding: 9px; }
-      .product-image { height: 155px; }
-      .product h3 { font-size: 12px; }
-      .product-price { font-size: 13px; }
-      .product-actions button { font-size: 10px; }
-      .section-head { align-items: start; flex-direction: column; }
-      .logo { font-size: 20px; }
-      .nav { min-height: 66px; }
-    }
-    @media(max-width:360px) {
-      .products { grid-template-columns: 1fr; }
-      .product-image { height: 220px; }
+      .product-image { height: 125px; font-size: 58px; }
+      .product h3 { font-size: 13px; }
+      .product-spec { font-size: 10px; }
+      .price { font-size: 12px; }
+      .add-button { padding: 8px; font-size: 11px; }
+      .section-heading h2 { font-size: 21px; }
+      .about { padding: 20px; }
     }
   </style>
 </head>
+
 <body>
+  <div class="topbar">✨ به NextMobile خوش آمدید | دنیای گوشی‌ها در یک جا</div>
 
-<header>
-  <div class="container nav">
-    <a href="#home" class="logo">Next<span>Mobile</span></a>
-    <nav class="nav-links">
-      <a href="#home">خانه</a>
-      <a href="#products">محصولات</a>
-      <a href="#about">درباره ما</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="btn btn-outline" onclick="openCart()">🛒 سبد خرید <span class="cart-count" id="cartCount">۰</span></button>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#" aria-label="صفحه اصلی NextMobile">Next<span>Mobile</span></a>
+
+      <nav class="nav-links" aria-label="منوی اصلی">
+        <a href="#">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+      </nav>
+
+      <button class="cart-button" id="openCart" type="button">
+        🛒 سبد خرید <span id="cartCount">۰</span>
+      </button>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="hero container" id="home">
-    <div class="hero-box">
+  <main class="container">
+    <section class="hero">
       <div>
-        <div class="eyebrow">نسل جدید خرید موبایل</div>
-        <h1>گوشی مورد علاقه‌ات<br>اینجا منتظرته.</h1>
-        <p>مدل‌های متنوع از برندهای محبوب، جست‌وجوی آسان و تجربه خرید ساده در NextMobile.</p>
-        <a href="#products" class="btn btn-primary">مشاهده محصولات ←</a>
-        <div class="hero-tags">
-          <span>✦ تنوع محصولات</span>
-          <span>✦ خرید آسان</span>
-          <span>✦ طراحی مدرن</span>
+        <span class="hero-label">نسل جدید تجربه خرید آنلاین</span>
+        <h1>گوشی بعدی تو،<br>از اینجا شروع می‌شه.</h1>
+        <p>مدل‌های مختلف گوشی را بررسی کن، جست‌وجو کن و انتخابت را به سبد خرید اضافه کن.</p>
+        <a href="#products"><button class="primary-button" type="button">مشاهده محصولات ←</button></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">📱</div>
+    </section>
+
+    <section class="benefits" aria-label="ویژگی‌ها">
+      <div class="benefit">
+        <div class="benefit-icon">🔎</div>
+        <div><strong>انتخاب راحت</strong><small>جست‌وجو و فیلتر محصولات</small></div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">🛒</div>
+        <div><strong>سبد خرید هوشمند</strong><small>ذخیره سبد روی همین دستگاه</small></div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">💜</div>
+        <div><strong>طراحی مدرن</strong><small>مناسب موبایل و کامپیوتر</small></div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="section-heading">
+        <div>
+          <h2>محصولات محبوب</h2>
+          <p>گوشی مورد علاقه‌ات را پیدا کن.</p>
         </div>
+        <span id="productCount" style="color:var(--muted);font-size:12px"></span>
       </div>
-      <div class="hero-visual" aria-hidden="true">📱</div>
-    </div>
 
-    <div class="stats">
-      <div class="stat"><strong id="heroProductCount">۷۰+</strong><span>مدل گوشی در فروشگاه</span></div>
-      <div class="stat"><strong>۶ برند</strong><span>برندهای محبوب موبایل</span></div>
-      <div class="stat"><strong>۲۴/۷</strong><span>دسترسی به فروشگاه</span></div>
-    </div>
-  </section>
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="🔍 جست‌وجوی نام گوشی..." aria-label="جست‌وجوی گوشی">
+        <select id="brandFilter" aria-label="فیلتر برند">
+          <option value="all">همه برندها</option>
+          <option value="Apple">Apple</option>
+          <option value="Samsung">Samsung</option>
+          <option value="Xiaomi">Xiaomi</option>
+          <option value="Google">Google</option>
+          <option value="Nothing">Nothing</option>
+        </select>
+        <select id="sortSelect" aria-label="مرتب‌سازی محصولات">
+          <option value="default">مرتب‌سازی پیش‌فرض</option>
+          <option value="low">ارزان‌ترین</option>
+          <option value="high">گران‌ترین</option>
+          <option value="name">نام محصول</option>
+        </select>
+      </div>
 
-  <section class="container" id="products">
-    <div class="section-head">
+      <div class="products" id="productsGrid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>درباره NextMobile</h2>
+      <p>
+        NextMobile یک فروشگاه نمایشی برای آشنایی با مدل‌های گوشی موبایل است.
+        در این سایت می‌توانی محصولات را جست‌وجو کنی، برندها را فیلتر کنی
+        و از قابلیت سبد خرید استفاده کنی.
+      </p>
+      <p>
+        توجه: قیمت‌ها و سفارش‌های این نسخه نمونه هستند. این سایت هنوز به
+        درگاه پرداخت، انبار واقعی یا سیستم ارسال سفارش متصل نیست.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
       <div>
-        <h2>محصولات فروشگاه</h2>
-        <p>گوشی مناسب خودت رو پیدا کن.</p>
+        <div class="logo">Next<span>Mobile</span></div>
+        <p>یک قدم جلوتر در دنیای موبایل 📱</p>
       </div>
-      <div class="count" id="productCount" aria-live="polite">۷۰ محصول</div>
+      <p>© <span id="year"></span> NextMobile — تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="سبد خرید" aria-hidden="true">
+    <div class="cart-header">
+      <h2>🛒 سبد خرید</h2>
+      <button class="close-button" id="closeCart" type="button">بستن ✕</button>
     </div>
 
-    <div class="toolbar">
-      <input id="searchInput" class="field" type="search" placeholder="🔎 جست‌وجوی نام یا مدل گوشی..." aria-label="جست‌وجوی محصولات">
-      <select id="brandFilter" class="field" aria-label="فیلتر برند">
-        <option value="all">همه برندها</option>
-        <option value="Apple">اپل</option>
-        <option value="Samsung">سامسونگ</option>
-        <option value="Xiaomi">شیائومی</option>
-        <option value="Google">گوگل</option>
-        <option value="OnePlus">وان‌پلاس</option>
-        <option value="Nothing">ناتینگ</option>
-      </select>
-      <select id="sortSelect" class="field" aria-label="مرتب‌سازی">
-        <option value="default">مرتب‌سازی پیش‌فرض</option>
-        <option value="low">قیمت: کم به زیاد</option>
-        <option value="high">قیمت: زیاد به کم</option>
-        <option value="name">نام محصول</option>
-      </select>
-    </div>
-
-    <div class="brands" id="brandChips">
-      <button class="brand-chip active" data-brand="all">همه</button>
-      <button class="brand-chip" data-brand="Apple">Apple</button>
-      <button class="brand-chip" data-brand="Samsung">Samsung</button>
-      <button class="brand-chip" data-brand="Xiaomi">Xiaomi</button>
-      <button class="brand-chip" data-brand="Google">Google</button>
-      <button class="brand-chip" data-brand="OnePlus">OnePlus</button>
-      <button class="brand-chip" data-brand="Nothing">Nothing</button>
-    </div>
-
-    <div class="products" id="productsGrid"></div>
-  </section>
-</main>
-
-<footer id="about">
-  <div class="container footer-row">
-    <div>
-      <a href="#home" class="logo">Next<span>Mobile</span></a>
-      <p>فروشگاه نمایشی موبایل با طراحی مدرن و واکنش‌گرا.</p>
-    </div>
-    <div>
-      <strong>راهنمای فروشگاه</strong>
-      <p>جست‌وجوی گوشی<br>فیلتر برند و قیمت<br>مدیریت سبد خرید</p>
-    </div>
-    <div>
-      <strong>درباره این نسخه</strong>
-      <p>قیمت‌ها نمونه هستند و سفارش‌ها فقط در همین مرورگر ذخیره می‌شوند.</p>
-      <small>© 2026 NextMobile</small>
-    </div>
-  </div>
-</footer>
-
-<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle" onclick="backdropClose(event,'cartOverlay')">
-  <div class="modal">
-    <div class="modal-head">
-      <h2 id="cartTitle">🛒 سبد خرید شما</h2>
-      <button class="close" onclick="closeModal('cartOverlay')" aria-label="بستن">×</button>
-    </div>
     <div id="cartItems"></div>
-    <div class="total-row"><span>مجموع</span><span id="cartTotal">۰ تومان</span></div>
-    <button class="btn btn-primary" style="width:100%" onclick="showCheckout()">ادامه و ثبت سفارش</button>
-    <div class="note">این نسخه آزمایشی است؛ پرداخت واقعی انجام نمی‌شود.</div>
-  </div>
-</div>
 
-<div class="overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" onclick="backdropClose(event,'checkoutOverlay')">
-  <div class="modal">
-    <div class="modal-head">
-      <h2 id="checkoutTitle">ثبت سفارش آزمایشی</h2>
-      <button class="close" onclick="closeModal('checkoutOverlay')" aria-label="بستن">×</button>
+    <div class="cart-total">
+      <span>مجموع</span>
+      <strong id="cartTotal">۰ تومان</strong>
     </div>
+
+    <button class="primary-button full-button" id="checkoutButton" type="button">
+      ادامه و ثبت سفارش نمایشی
+    </button>
+
     <form class="checkout-form" id="checkoutForm">
-      <input class="field" name="customer" placeholder="نام و نام خانوادگی" required maxlength="80">
-      <input class="field" name="phone" placeholder="شماره تماس" type="tel" required maxlength="20">
-      <textarea class="field" name="address" placeholder="آدرس تحویل" rows="3" required maxlength="500"></textarea>
-      <button class="btn btn-primary" type="submit">ثبت سفارش</button>
+      <h3>اطلاعات سفارش</h3>
+      <p style="font-size:12px;color:var(--muted)">
+        این فرم فقط نمایشی است و اطلاعات به سرور ارسال نمی‌شوند.
+      </p>
+
+      <label for="customerName">نام و نام خانوادگی</label>
+      <input id="customerName" name="name" required maxlength="80" autocomplete="name" placeholder="نام شما">
+
+      <label for="customerPhone">شماره تماس</label>
+      <input id="customerPhone" name="phone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="شماره تماس">
+
+      <label for="customerAddress">آدرس</label>
+      <input id="customerAddress" name="address" required maxlength="250" autocomplete="street-address" placeholder="آدرس نمونه">
+
+      <button class="primary-button full-button" style="margin-top:15px" type="submit">
+        ثبت سفارش آزمایشی
+      </button>
     </form>
-    <div class="note">اطلاعات این فرم به سرور ارسال نمی‌شود و فقط به‌صورت محلی در مرورگر ذخیره خواهد شد.</div>
-  </div>
-</div>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="notice" id="orderNotice" role="status"></div>
+  </aside>
 
-<script>
-"use strict";
+  <script>
+    "use strict";
 
-const rawProducts = [
-  ["Apple","iPhone 17 Pro Max",89900000],
-  ["Apple","iPhone 17 Pro",81900000],
-  ["Apple","iPhone 17",64900000],
-  ["Apple","iPhone 16 Pro Max",78900000],
-  ["Apple","iPhone 16 Pro",72900000],
-  ["Apple","iPhone 16 Plus",61900000],
-  ["Apple","iPhone 16",55900000],
-  ["Apple","iPhone 16e",42900000],
-  ["Apple","iPhone 15 Pro Max",64900000],
-  ["Apple","iPhone 15",45900000],
-  ["Apple","iPhone 14",38900000],
-  ["Apple","iPhone SE (2022)",25900000],
+    const products = [
+      {id:1, brand:"Apple", name:"iPhone 16 Pro Max", price:95000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:2, brand:"Apple", name:"iPhone 16 Pro", price:85000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:3, brand:"Apple", name:"iPhone 16", price:65000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:4, brand:"Apple", name:"iPhone 15", price:52000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:5, brand:"Apple", name:"iPhone 14", price:42000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:6, brand:"Apple", name:"iPhone 13", price:35000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
 
-  ["Samsung","Galaxy S25 Ultra",79900000],
-  ["Samsung","Galaxy S25+",65900000],
-  ["Samsung","Galaxy S25",55900000],
-  ["Samsung","Galaxy S24 Ultra",67900000],
-  ["Samsung","Galaxy S24+",52900000],
-  ["Samsung","Galaxy S24 FE",38900000],
-  ["Samsung","Galaxy Z Fold6",99900000],
-  ["Samsung","Galaxy Z Flip6",62900000],
-  ["Samsung","Galaxy A56",23900000],
-  ["Samsung","Galaxy A36",16900000],
-  ["Samsung","Galaxy A26",12900000],
-  ["Samsung","Galaxy A16",8900000],
+      {id:7, brand:"Samsung", name:"Galaxy S25 Ultra", price:90000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:8, brand:"Samsung", name:"Galaxy S25+", price:72000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:9, brand:"Samsung", name:"Galaxy S25", price:60000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:10, brand:"Samsung", name:"Galaxy S24 Ultra", price:75000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:11, brand:"Samsung", name:"Galaxy S24 FE", price:45000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:12, brand:"Samsung", name:"Galaxy A56", price:30000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:13, brand:"Samsung", name:"Galaxy A36", price:22000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:14, brand:"Samsung", name:"Galaxy A26", price:17000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
 
-  ["Xiaomi","Xiaomi 15 Ultra",69900000],
-  ["Xiaomi","Xiaomi 15",48900000],
-  ["Xiaomi","Xiaomi 14T Pro",37900000],
-  ["Xiaomi","Xiaomi 14T",29900000],
-  ["Xiaomi","Redmi Note 14 Pro+",21900000],
-  ["Xiaomi","Redmi Note 14 Pro",17900000],
-  ["Xiaomi","Redmi Note 14",11900000],
-  ["Xiaomi","Redmi 14C",7900000],
-  ["Xiaomi","POCO F7 Pro",33900000],
-  ["Xiaomi","POCO X7 Pro",22900000],
-  ["Xiaomi","POCO X7",15900000],
-  ["Xiaomi","POCO M7 Pro",11900000],
+      {id:15, brand:"Xiaomi", name:"Xiaomi 15 Ultra", price:78000000, spec:"۵۱۲ گیگابایت", icon:"📱"},
+      {id:16, brand:"Xiaomi", name:"Xiaomi 15", price:57000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:17, brand:"Xiaomi", name:"Xiaomi 14T Pro", price:48000000, spec:"۵۱۲ گیگابایت", icon:"📱"},
+      {id:18, brand:"Xiaomi", name:"Redmi Note 14 Pro+", price:30000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:19, brand:"Xiaomi", name:"Redmi Note 14 Pro", price:24000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:20, brand:"Xiaomi", name:"Redmi Note 14", price:16000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:21, brand:"Xiaomi", name:"Poco X7 Pro", price:29000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:22, brand:"Xiaomi", name:"Poco F6", price:27000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
 
-  ["Google","Pixel 9 Pro XL",68900000],
-  ["Google","Pixel 9 Pro",62900000],
-  ["Google","Pixel 9",46900000],
-  ["Google","Pixel 8a",28900000],
-  ["Google","Pixel 8 Pro",44900000],
-  ["Google","Pixel 8",35900000],
-  ["Google","Pixel 7a",21900000],
-  ["Google","Pixel Fold",79900000],
+      {id:23, brand:"Google", name:"Pixel 9 Pro XL", price:82000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:24, brand:"Google", name:"Pixel 9 Pro", price:73000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:25, brand:"Google", name:"Pixel 9", price:55000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
+      {id:26, brand:"Google", name:"Pixel 8a", price:35000000, spec:"۱۲۸ گیگابایت", icon:"📱"},
 
-  ["OnePlus","OnePlus 13",56900000],
-  ["OnePlus","OnePlus 13R",38900000],
-  ["OnePlus","OnePlus 12",44900000],
-  ["OnePlus","OnePlus 12R",31900000],
-  ["OnePlus","OnePlus Nord 4",24900000],
-  ["OnePlus","OnePlus Nord CE4",17900000],
-  ["OnePlus","OnePlus Open",72900000],
-  ["OnePlus","OnePlus 11",35900000],
+      {id:27, brand:"Nothing", name:"Nothing Phone (3)", price:58000000, spec:"۲۵۶ گیگابایت", icon:"📱"},
+      {id:28, brand:"Nothing", name:"Nothing Phone (2a)", price:28000000, spec:"۲۵۶ گیگابایت", icon:"📱"}
+    ];
 
-  ["Nothing","Nothing Phone (3)",49900000],
-  ["Nothing","Nothing Phone (3a) Pro",31900000],
-  ["Nothing","Nothing Phone (3a)",24900000],
-  ["Nothing","Nothing Phone (2)",29900000],
-  ["Nothing","Nothing Phone (2a) Plus",21900000],
-  ["Nothing","Nothing Phone (2a)",17900000],
-  ["Nothing","CMF Phone 2 Pro",16900000],
-  ["Nothing","CMF Phone 1",11900000],
+    const $ = (id) => document.getElementById(id);
+    const numberFormat = new Intl.NumberFormat("fa-IR");
 
-  ["Samsung","Galaxy A06",6900000],
-  ["Samsung","Galaxy S23 FE",29900000],
-  ["Apple","iPhone 13",32900000],
-  ["Xiaomi","Redmi Note 13 Pro",15900000],
-  ["Xiaomi","Redmi Note 13",10900000],
-  ["Google","Pixel 7",25900000],
-  ["OnePlus","OnePlus Nord CE3 Lite",13900000],
-  ["Samsung","Galaxy Z Flip5",44900000],
-  ["Apple","iPhone 15 Plus",49900000],
-  ["Xiaomi","POCO F6 Pro",28900000],
-  ["Google","Pixel 6a",16900000]
-];
+    function formatPrice(price) {
+      return numberFormat.format(price) + " تومان";
+    }
 
-const products = rawProducts.map((p,i) => ({
-  id: i + 1,
-  brand: p[0],
-  name: p[1],
-  price: p[2],
-  image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=80"
-}));
+    let cart = loadCart();
 
-const fa = new Intl.NumberFormat("fa-IR");
-const money = n => fa.format(n) + " تومان";
-const brandFa = {
-  Apple: "اپل",
-  Samsung: "سامسونگ",
-  Xiaomi: "شیائومی",
-  Google: "گوگل",
-  OnePlus: "وان‌پلاس",
-  Nothing: "ناتینگ"
-};
+    function loadCart() {
+      try {
+        const saved = JSON.parse(localStorage.getItem("nextmobile-cart") || "[]");
+        if (!Array.isArray(saved)) return [];
+        return saved.filter(item =>
+          item &&
+          Number.isInteger(item.id) &&
+          Number.isInteger(item.qty) &&
+          item.qty > 0 &&
+          products.some(product => product.id === item.id)
+        );
+      } catch (error) {
+        return [];
+      }
+    }
 
-let activeBrand = "all";
-let cart = loadCart();
+    function saveCart() {
+      try {
+        localStorage.setItem("nextmobile-cart", JSON.stringify(cart));
+      } catch (error) {
+        // اگر ذخیره‌سازی مرورگر در دسترس نباشد، سایت همچنان کار می‌کند.
+      }
+    }
 
-function loadCart() {
-  try {
-    const data = JSON.parse(localStorage.getItem("nextmobile_cart") || "[]");
-    if (!Array.isArray(data)) return [];
-    return data.filter(x =>
-      x && Number.isInteger(x.id) &&
-      Number.isInteger(x.qty) && x.qty > 0 &&
-      products.some(p => p.id === x.id)
-    );
-  } catch {
-    return [];
-  }
-}
+    function renderProducts() {
+      const query = $("searchInput").value.trim().toLowerCase();
+      const brand = $("brandFilter").value;
+      const sort = $("sortSelect").value;
 
-function saveCart() {
-  try {
-    localStorage.setItem("nextmobile_cart", JSON.stringify(cart));
-  } catch {
-    showToast("ذخیره‌سازی مرورگر در دسترس نیست.");
-  }
-}
+      let filtered = products.filter(product => {
+        const matchesText =
+          product.name.toLowerCase().includes(query) ||
+          product.brand.toLowerCase().includes(query) ||
+          product.spec.toLowerCase().includes(query);
 
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, c => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[c]));
-}
+        return matchesText && (brand === "all" || product.brand === brand);
+      });
 
-function productCard(p) {
-  return `
-    <article class="product">
-      <div class="product-image">
-        <img src="${p.image}" alt="${escapeHTML(p.name)}" loading="lazy"
-          onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span style=&quot;font-size:76px&quot;>📱</span>')">
-      </div>
-      <div class="product-brand">${escapeHTML(brandFa[p.brand])} · ${escapeHTML(p.brand)}</div>
-      <h3>${escapeHTML(p.name)}</h3>
-      <div class="product-meta">
-        <span>گوشی هوشمند</span>
-        <span>مدل ${fa.format(p.id)}</span>
-      </div>
-      <div class="product-price">${money(p.price)} <small></small></div>
-      <div class="product-actions">
-        <button class="btn btn-primary" onclick="addToCart(${p.id})">افزودن به سبد</button>
-        <button class="btn btn-light" onclick="showProduct(${p.id})">جزئیات</button>
-      </div>
-    </article>`;
-}
+      if (sort === "low") filtered.sort((a,b) => a.price - b.price);
+      if (sort === "high") filtered.sort((a,b) => b.price - a.price);
+      if (sort === "name") filtered.sort((a,b) => a.name.localeCompare(b.name));
 
-function renderProducts() {
-  const query = document.getElementById("searchInput").value.trim().toLowerCase();
-  const sort = document.getElementById("sortSelect").value;
+      $("productCount").textContent =
+        numberFormat.format(filtered.length) + " محصول";
 
-  let list = products.filter(p => {
-    const matchesBrand = activeBrand === "all" || p.brand === activeBrand;
-    const searchable = (p.name + " " + p.brand + " " + brandFa[p.brand]).toLowerCase();
-    return matchesBrand && searchable.includes(query);
-  });
+      const grid = $("productsGrid");
 
-  if (sort === "low") list.sort((a,b) => a.price - b.price);
-  if (sort === "high") list.sort((a,b) => b.price - a.price);
-  if (sort === "name") list.sort((a,b) => a.name.localeCompare(b.name));
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="empty-state">محصولی با این مشخصات پیدا نشد. عبارت دیگری را امتحان کن. 🔎</div>';
+        return;
+      }
 
-  document.getElementById("productCount").textContent =
-    fa.format(list.length) + " محصول";
-
-  document.getElementById("productsGrid").innerHTML = list.length
-    ? list.map(productCard).join("")
-    : `<div class="empty">
-         <div style="font-size:38px">🔎</div>
-         <h3>محصولی پیدا نشد</h3>
-         <p>عبارت جست‌وجو یا فیلتر برند رو تغییر بده.</p>
-         <button class="btn btn-light" onclick="resetFilters()">پاک کردن فیلترها</button>
-       </div>`;
-
-  document.querySelectorAll(".brand-chip").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.brand === activeBrand);
-  });
-}
-
-function resetFilters() {
-  activeBrand = "all";
-  document.getElementById("searchInput").value = "";
-  document.getElementById("brandFilter").value = "all";
-  document.getElementById("sortSelect").value = "default";
-  renderProducts();
-}
-
-function addToCart(id) {
-  const product = products.find(p => p.id === id);
-  if (!product) return;
-
-  const item = cart.find(x => x.id === id);
-  if (item) item.qty++;
-  else cart.push({ id, qty: 1 });
-
-  saveCart();
-  updateCartCount();
-  showToast(product.name + " به سبد خرید اضافه شد.");
-}
-
-function updateCartCount() {
-  document.getElementById("cartCount").textContent = fa.format(
-    cart.reduce((sum,item) => sum + item.qty,0)
-  );
-}
-
-function cartTotal() {
-  return cart.reduce((sum,item) => {
-    const p = products.find(x => x.id === item.id);
-    return sum + (p ? p.price * item.qty : 0);
-  },0);
-}
-
-function renderCart() {
-  const el = document.getElementById("cartItems");
-
-  if (!cart.length) {
-    el.innerHTML = `
-      <div class="empty">
-        <div style="font-size:42px">🛒</div>
-        <h3>سبد خرید خالیه</h3>
-        <p>از محصولات فروشگاه گوشی دلخواهت رو انتخاب کن.</p>
-      </div>`;
-  } else {
-    el.innerHTML = cart.map(item => {
-      const p = products.find(x => x.id === item.id);
-      if (!p) return "";
-
-      return `
-        <div class="cart-item">
-          <img src="${p.image}" alt="${escapeHTML(p.name)}">
-          <div>
-            <h4>${escapeHTML(p.name)}</h4>
-            <p>${money(p.price)}</p>
-            <div class="quantity">
-              <button onclick="changeQty(${p.id},1)" aria-label="افزایش تعداد">+</button>
-              <span>${fa.format(item.qty)}</span>
-              <button onclick="changeQty(${p.id},-1)" aria-label="کاهش تعداد">−</button>
-            </div>
+      grid.innerHTML = filtered.map(product => `
+        <article class="product">
+          <div class="product-image" aria-label="نماد گوشی">
+            <span class="phone-emoji" aria-hidden="true">${product.icon}</span>
           </div>
-          <button class="btn btn-light" onclick="removeFromCart(${p.id})">حذف</button>
-        </div>`;
-    }).join("");
-  }
+          <div class="product-brand">${product.brand}</div>
+          <h3>${product.name}</h3>
+          <div class="product-spec">${product.spec}</div>
+          <div class="product-bottom">
+            <div class="price">
+              ${formatPrice(product.price)}
+              <small>قیمت نمونه</small>
+            </div>
+            <button class="add-button" type="button" data-add="${product.id}">
+              + افزودن
+            </button>
+          </div>
+        </article>
+      `).join("");
+    }
 
-  document.getElementById("cartTotal").textContent = money(cartTotal());
-}
+    function addToCart(id) {
+      const item = cart.find(entry => entry.id === id);
+      if (item) {
+        item.qty += 1;
+      } else {
+        cart.push({id, qty:1});
+      }
+      saveCart();
+      renderCart();
+      showNotice("محصول به سبد خرید اضافه شد.");
+    }
 
-function changeQty(id,amount) {
-  const item = cart.find(x => x.id === id);
-  if (!item) return;
+    function changeQuantity(id, delta) {
+      const item = cart.find(entry => entry.id === id);
+      if (!item) return;
 
-  item.qty += amount;
-  if (item.qty <= 0) cart = cart.filter(x => x.id !== id);
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(entry => entry.id !== id);
+      }
 
-  saveCart();
-  updateCartCount();
-  renderCart();
-}
+      saveCart();
+      renderCart();
+    }
 
-function removeFromCart(id) {
-  cart = cart.filter(x => x.id !== id);
-  saveCart();
-  updateCartCount();
-  renderCart();
-  showToast("محصول از سبد خرید حذف شد.");
-}
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      saveCart();
+      renderCart();
+    }
 
-function openCart() {
-  renderCart();
-  openModal("cartOverlay");
-}
+    function renderCart() {
+      const count = cart.reduce((sum,item) => sum + item.qty, 0);
+      const total = cart.reduce((sum,item) => {
+        const product = products.find(p => p.id === item.id);
+        return sum + (product ? product.price * item.qty : 0);
+      }, 0);
 
-function showProduct(id) {
-  const p = products.find(x => x.id === id);
-  if (p) showToast(p.name + " — " + money(p.price));
-}
+      $("cartCount").textContent = numberFormat.format(count);
+      $("cartTotal").textContent = formatPrice(total);
 
-function showCheckout() {
-  if (!cart.length) {
-    showToast("سبد خریدت خالیه.");
-    return;
-  }
-  closeModal("cartOverlay");
-  openModal("checkoutOverlay");
-}
+      if (cart.length === 0) {
+        $("cartItems").innerHTML =
+          '<div class="empty-state" style="margin-top:20px">سبد خریدت خالیه! 🛒<br>از محصولات بالا چیزی انتخاب کن.</div>';
+        $("checkoutButton").disabled = true;
+        $("checkoutButton").style.opacity = ".5";
+        $("checkoutForm").classList.remove("show");
+        return;
+      }
 
-function openModal(id) {
-  document.getElementById(id).classList.add("show");
-}
+      $("checkoutButton").disabled = false;
+      $("checkoutButton").style.opacity = "1";
 
-function closeModal(id) {
-  document.getElementById(id).classList.remove("show");
-}
+      $("cartItems").innerHTML = cart.map(item => {
+        const product = products.find(p => p.id === item.id);
+        if (!product) return "";
 
-function backdropClose(event,id) {
-  if (event.target.id === id) closeModal(id);
-}
+        return `
+          <div class="cart-item">
+            <div class="cart-item-icon" aria-hidden="true">${product.icon}</div>
+            <div>
+              <strong>${product.name}</strong>
+              <small>${formatPrice(product.price)}</small>
+              <div class="quantity">
+                <button type="button" data-plus="${product.id}" aria-label="افزایش تعداد">+</button>
+                <span>${numberFormat.format(item.qty)}</span>
+                <button type="button" data-minus="${product.id}" aria-label="کاهش تعداد">−</button>
+              </div>
+            </div>
+            <button class="remove-button" type="button" data-remove="${product.id}">حذف</button>
+          </div>
+        `;
+      }).join("");
+    }
 
-function showToast(message) {
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.classList.add("show");
-  clearTimeout(showToast.timer);
-  showToast.timer = setTimeout(() => toast.classList.remove("show"),2600);
-}
+    function openCart() {
+      $("overlay").classList.add("open");
+      $("cartPanel").classList.add("open");
+      $("cartPanel").setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
 
-document.getElementById("searchInput").addEventListener("input",renderProducts);
-document.getElementById("sortSelect").addEventListener("change",renderProducts);
+    function closeCart() {
+      $("overlay").classList.remove("open");
+      $("cartPanel").classList.remove("open");
+      $("cartPanel").setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
 
-document.getElementById("brandFilter").addEventListener("change",event => {
-  activeBrand = event.target.value;
-  renderProducts();
-});
+    function showNotice(message) {
+      const notice = $("orderNotice");
+      notice.textContent = message;
+      notice.classList.add("show");
+      window.setTimeout(() => notice.classList.remove("show"), 2800);
+    }
 
-document.getElementById("brandChips").addEventListener("click",event => {
-  const btn = event.target.closest("[data-brand]");
-  if (!btn) return;
+    $("productsGrid").addEventListener("click", event => {
+      const button = event.target.closest("[data-add]");
+      if (button) addToCart(Number(button.dataset.add));
+    });
 
-  activeBrand = btn.dataset.brand;
-  document.getElementById("brandFilter").value = activeBrand;
-  renderProducts();
-});
+    $("cartItems").addEventListener("click", event => {
+      const plus = event.target.closest("[data-plus]");
+      const minus = event.target.closest("[data-minus]");
+      const remove = event.target.closest("[data-remove]");
 
-document.getElementById("checkoutForm").addEventListener("submit",event => {
-  event.preventDefault();
+      if (plus) changeQuantity(Number(plus.dataset.plus), 1);
+      if (minus) changeQuantity(Number(minus.dataset.minus), -1);
+      if (remove) removeFromCart(Number(remove.dataset.remove));
+    });
 
-  if (!cart.length) {
-    showToast("سبد خرید خالیه.");
-    closeModal("checkoutOverlay");
-    return;
-  }
+    $("searchInput").addEventListener("input", renderProducts);
+    $("brandFilter").addEventListener("change", renderProducts);
+    $("sortSelect").addEventListener("change", renderProducts);
 
-  const form = new FormData(event.currentTarget);
-  const order = {
-    orderNumber: "NM-" + Date.now().toString().slice(-8),
-    customer: String(form.get("customer") || "").trim(),
-    phone: String(form.get("phone") || "").trim(),
-    address: String(form.get("address") || "").trim(),
-    items: cart.map(item => ({...item})),
-    total: cartTotal(),
-    createdAt: new Date().toISOString()
-  };
+    $("openCart").addEventListener("click", openCart);
+    $("closeCart").addEventListener("click", closeCart);
+    $("overlay").addEventListener("click", closeCart);
 
-  try {
-    const oldOrders = JSON.parse(localStorage.getItem("nextmobile_orders") || "[]");
-    const orders = Array.isArray(oldOrders) ? oldOrders : [];
-    orders.push(order);
-    localStorage.setItem("nextmobile_orders",JSON.stringify(orders));
-  } catch {
-    showToast("ذخیره سفارش انجام نشد؛ فضای مرورگر را بررسی کن.");
-    return;
-  }
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeCart();
+    });
 
-  cart = [];
-  saveCart();
-  updateCartCount();
-  event.currentTarget.reset();
-  closeModal("checkoutOverlay");
-  renderCart();
-  showToast("سفارش آزمایشی " + order.orderNumber + " ثبت شد.");
-});
+    $("checkoutButton").addEventListener("click", () => {
+      if (cart.length === 0) return;
+      $("checkoutForm").classList.toggle("show");
+      $("checkoutForm").scrollIntoView({behavior:"smooth", block:"nearest"});
+    });
 
-document.addEventListener("keydown",event => {
-  if (event.key === "Escape") {
-    closeModal("cartOverlay");
-    closeModal("checkoutOverlay");
-  }
-});
+    $("checkoutForm").addEventListener("submit", event => {
+      event.preventDefault();
 
-document.getElementById("heroProductCount").textContent =
-  fa.format(products.length) + "+";
+      if (cart.length === 0) return;
 
-renderProducts();
-updateCartCount();
-</script>
+      const name = $("customerName").value.trim();
+      const phone = $("customerPhone").value.trim();
+      const address = $("customerAddress").value.trim();
+
+      if (!name || !phone || !address) {
+        showNotice("لطفاً همه فیلدها را تکمیل کن.");
+        return;
+      }
+
+      // نسخه نمایشی: سفارش در سرور ثبت نمی‌شود.
+      cart = [];
+      saveCart();
+      renderCart();
+      $("checkoutForm").reset();
+      $("checkoutForm").classList.remove("show");
+      showNotice("سفارش آزمایشی ثبت شد! این سفارش واقعی نیست.");
+    });
+
+    $("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+    renderCart();
+  </script>
 </body>
 </html>
 ```
